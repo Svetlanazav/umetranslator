@@ -15,9 +15,9 @@ const FounderStory: React.FC = () => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
         
-        // Check if element is in viewport
+        // Check if element is in viewport with more lenient threshold
         if (
-          elementTop < window.innerHeight - 100 &&
+          elementTop < window.innerHeight - 50 &&
           elementBottom > 0
         ) {
           element.classList.add('animate-fade-in');
@@ -25,8 +25,16 @@ const FounderStory: React.FC = () => {
       });
     };
     
-    // Trigger once on load
-    handleScroll();
+    // Set initial visibility instead of relying solely on scroll
+    const elements = container.querySelectorAll('.animate-on-scroll');
+    elements.forEach((element) => {
+      element.classList.add('opacity-0');
+    });
+    
+    // Trigger once on load with a slight delay to ensure rendering
+    setTimeout(() => {
+      handleScroll();
+    }, 100);
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -38,7 +46,7 @@ const FounderStory: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <div className="animate-on-scroll opacity-0">
+              <div className="animate-on-scroll">
                 <div className="inline-block bg-ume-yellow/10 text-ume-yellow px-4 py-1 rounded-full text-sm font-medium">
                   Our Story
                 </div>
@@ -66,7 +74,7 @@ const FounderStory: React.FC = () => {
             </div>
             
             <div className="md:w-1/2">
-              <div className="relative animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
+              <div className="relative animate-on-scroll" style={{ animationDelay: '200ms' }}>
                 <div className="aspect-square rounded-2xl bg-gradient-to-br from-ume-yellow/30 to-ume-pink/30 overflow-hidden shadow-lg p-8 flex items-center justify-center">
                   <div className="glass-card p-8 max-w-xs rotate-3 shadow-xl">
                     <div className="flex items-start gap-3 mb-4">
