@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-              U Translator: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">Decode Texts, Flirt Like a Pro</span>
+              Ume: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">Decode Texts, Flirt Like a Pro</span>
             </h1>
             
             {/* Subheadline */}
