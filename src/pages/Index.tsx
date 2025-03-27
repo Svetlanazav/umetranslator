@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
 import DecodeQuiz from '@/components/DecodeQuiz';
 import Features from '@/components/Features';
+import ExampleSection from '@/components/ExampleSection';
 import PersonaSection from '@/components/PersonaSection';
 import FounderStory from '@/components/FounderStory';
 import SocialProof from '@/components/SocialProof';
@@ -15,6 +16,7 @@ const Index: React.FC = () => {
       <Hero />
       <DecodeQuiz />
       <Features />
+      <ExampleSection />
       <PersonaSection />
       <FounderStory />
       <SocialProof />
