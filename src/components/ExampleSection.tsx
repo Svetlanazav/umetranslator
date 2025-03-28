@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, MessageSquare } from 'lucide-react';
@@ -215,6 +214,39 @@ const ExampleSection: React.FC = () => {
                     <span className="text-lg">📅</span>
                   </div>
                   <p className="text-sm text-gray-600">A chaotic desk vs. Ume's smooth translation</p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Example 6: The Vague Date Invite */}
+            <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
+              <div className="bg-ume-purple/20 p-4">
+                <h3 className="font-bold text-lg text-gray-800">The Vague Date Invite</h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
+                  <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
+                    <p className="text-gray-700">"Wanna grab coffee sometime?" (A Tinder match drops this—hot or not?)</p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-center my-4">
+                  <ArrowDown className="text-ume-purple animate-bounce" />
+                </div>
+                
+                <div className="bg-ume-pink/10 rounded-xl p-4 mb-4">
+                  <div className="text-xs text-gray-500 mb-1">Flirt Style Transform:</div>
+                  <div className="font-medium text-ume-pink">
+                    "How about coffee and some steamy eye contact—when's my VIP slot?"
+                  </div>
+                </div>
+                
+                <div className="flex gap-3 items-center mt-6">
+                  <div className="w-10 h-10 rounded-full bg-ume-yellow/30 flex items-center justify-center">
+                    <span className="text-lg">😏</span>
+                  </div>
+                  <p className="text-sm text-gray-600">The smirk vs. Ume's smooth translation</p>
                 </div>
               </CardContent>
             </Card>
