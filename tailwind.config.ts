@@ -64,17 +64,75 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				ume: {
-					purple: '#8B5CF6',  // Vivid purple - energetic, gender-neutral
-					pink: '#D946EF',    // Bright magenta - flirty, energetic
-					yellow: '#F97316',  // Bright orange - energetic, attention-grabbing
-					light: '#f9f5f1',   // Light background color
-					dark: '#333333',    // Dark text for contrast
-					// Additional softer tones
-					'purple-light': '#E5DEFF',  // Light purple for backgrounds
-					'pink-light': '#FFDEE2',    // Light pink for backgrounds
-					'yellow-light': '#FDE1D3',  // Light orange/peach for backgrounds
-					'blue': '#0EA5E9',          // Ocean blue for balance and contrast
-					'blue-light': '#D3E4FD'     // Light blue for backgrounds
+					// Using your exact provided palette
+					'floral-white': '#f9f5ee',
+					'floral-white-100': '#483719',
+					'floral-white-200': '#8f6d32',
+					'floral-white-300': '#c69f5d',
+					'floral-white-400': '#dfcaa4',
+					'floral-white-500': '#f9f5ee',
+					'floral-white-600': '#faf6f0',
+					'floral-white-700': '#fbf8f4',
+					'floral-white-800': '#fcfbf7',
+					'floral-white-900': '#fefdfb',
+					
+					'periwinkle': '#c2c2f0',
+					'periwinkle-100': '#111146',
+					'periwinkle-200': '#22228c',
+					'periwinkle-300': '#3636ce',
+					'periwinkle-400': '#7c7cdf',
+					'periwinkle-500': '#c2c2f0',
+					'periwinkle-600': '#cecef3',
+					'periwinkle-700': '#dadaf6',
+					'periwinkle-800': '#e6e6f9',
+					'periwinkle-900': '#f3f3fc',
+					
+					'dogwood-rose': '#d90466',
+					'dogwood-rose-100': '#2b0115',
+					'dogwood-rose-200': '#560229',
+					'dogwood-rose-300': '#81033e',
+					'dogwood-rose-400': '#ac0452',
+					'dogwood-rose-500': '#d90466',
+					'dogwood-rose-600': '#fa1b83',
+					'dogwood-rose-700': '#fc54a2',
+					'dogwood-rose-800': '#fd8dc1',
+					'dogwood-rose-900': '#fec6e0',
+					
+					'mikado-yellow': '#ffc300',
+					'mikado-yellow-100': '#332700',
+					'mikado-yellow-200': '#664e00',
+					'mikado-yellow-300': '#997500',
+					'mikado-yellow-400': '#cc9c00',
+					'mikado-yellow-500': '#ffc300',
+					'mikado-yellow-600': '#ffcf33',
+					'mikado-yellow-700': '#ffdb66',
+					'mikado-yellow-800': '#ffe799',
+					'mikado-yellow-900': '#fff3cc',
+					
+					'penn-blue': '#0f1d63',
+					'penn-blue-100': '#030614',
+					'penn-blue-200': '#060b27',
+					'penn-blue-300': '#09113b',
+					'penn-blue-400': '#0c174e',
+					'penn-blue-500': '#0f1d63',
+					'penn-blue-600': '#1931a7',
+					'penn-blue-700': '#2f4de0',
+					'penn-blue-800': '#7588ea',
+					'penn-blue-900': '#bac4f5',
+					
+					// Map legacy colors to new palette for backward compatibility
+					'purple': '#c2c2f0',  // periwinkle
+					'pink': '#d90466',    // dogwood-rose
+					'yellow': '#ffc300',  // mikado-yellow
+					'light': '#f9f5ee',   // floral-white
+					'dark': '#0f1d63',    // penn-blue
+					
+					// Additional SCSS colors from the second palette
+					'isabelline': '#faf6f3',
+					'lavender-web': '#dfdff6',
+					'sunglow': '#ffcf31',
+					'mexican-pink': '#e51077',
+					'deep-blue': '#171751'
 				}
 			},
 			borderRadius: {
