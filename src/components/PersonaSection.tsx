@@ -7,19 +7,19 @@ const PersonaSection: React.FC = () => {
       title: "Singles",
       description: "Just dipping your toe in the dating pool? Ume helps you navigate mixed signals and decode those 'interesting' dating app messages.",
       icon: "🧍",
-      color: "from-ume-deep-blue-600/20 to-ume-deep-blue-600/5"
+      color: "from-ume-purple/20 to-ume-purple/5"
     },
     {
       title: "Couples",
       description: "Level up your relationship communication. Understand what your partner is really saying and respond in a way that builds connection.",
       icon: "👫",
-      color: "from-ume-ocean-blue-500/20 to-ume-ocean-blue-500/5"
+      color: "from-ume-pink/20 to-ume-pink/5"
     },
     {
       title: "Flirt Fiends",
       description: "Take your flirting game from awkward to amazing. Ume helps you craft responses that keep the conversation flowing and the interest growing.",
       icon: "😏",
-      color: "from-ume-energetic-orange-500/20 to-ume-energetic-orange-500/5"
+      color: "from-ume-yellow/20 to-ume-yellow/5"
     }
   ];
   
@@ -27,7 +27,7 @@ const PersonaSection: React.FC = () => {
     <section id="who-its-for" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block bg-ume-ocean-blue-500/10 text-ume-ocean-blue-600 px-4 py-1 rounded-full text-sm font-medium">
+          <div className="inline-block bg-ume-pink/10 text-ume-pink px-4 py-1 rounded-full text-sm font-medium">
             Who It's For
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
