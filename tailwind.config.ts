@@ -64,11 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				ume: {
-					purple: '#d4c1f2',
-					pink: '#ecbcd9',
-					yellow: '#fee285',
-					light: '#f9f5f1',
-					dark: '#333333'
+					purple: '#8B5CF6',  // Vivid purple - energetic, gender-neutral
+					pink: '#D946EF',    // Bright magenta - flirty, energetic
+					yellow: '#F97316',  // Bright orange - energetic, attention-grabbing
+					light: '#f9f5f1',   // Light background color
+					dark: '#333333',    // Dark text for contrast
+					// Additional softer tones
+					'purple-light': '#E5DEFF',  // Light purple for backgrounds
+					'pink-light': '#FFDEE2',    // Light pink for backgrounds
+					'yellow-light': '#FDE1D3',  // Light orange/peach for backgrounds
+					'blue': '#0EA5E9',          // Ocean blue for balance and contrast
+					'blue-light': '#D3E4FD'     // Light blue for backgrounds
 				}
 			},
 			borderRadius: {
