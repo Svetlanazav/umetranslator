@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -120,19 +119,52 @@ export default {
 					'penn-blue-800': '#7588ea',
 					'penn-blue-900': '#bac4f5',
 					
+					// Adding new energetic and deep blue colors
+					'deep-blue': '#171751',
+					'deep-blue-100': '#03030f',
+					'deep-blue-200': '#06061d',
+					'deep-blue-300': '#09092c',
+					'deep-blue-400': '#0c0c3a',
+					'deep-blue-500': '#171751',
+					'deep-blue-600': '#232371',
+					'deep-blue-700': '#3535aa',
+					'deep-blue-800': '#6a6ad1',
+					'deep-blue-900': '#b4b4e8',
+					
+					'ocean-blue': '#0EA5E9',
+					'ocean-blue-100': '#032030',
+					'ocean-blue-200': '#054060',
+					'ocean-blue-300': '#086090',
+					'ocean-blue-400': '#0a80c0',
+					'ocean-blue-500': '#0EA5E9',
+					'ocean-blue-600': '#39b6ed',
+					'ocean-blue-700': '#64c7f1',
+					'ocean-blue-800': '#8fd7f5',
+					'ocean-blue-900': '#c7ebfa',
+					
+					'energetic-orange': '#F97316',
+					'energetic-orange-100': '#331705',
+					'energetic-orange-200': '#662e0a',
+					'energetic-orange-300': '#99450f',
+					'energetic-orange-400': '#cc5c14',
+					'energetic-orange-500': '#F97316',
+					'energetic-orange-600': '#fa8e44',
+					'energetic-orange-700': '#fbaa72',
+					'energetic-orange-800': '#fdc59f',
+					'energetic-orange-900': '#fee2cf',
+					
 					// Map legacy colors to new palette for backward compatibility
 					'purple': '#c2c2f0',  // periwinkle
 					'pink': '#d90466',    // dogwood-rose
 					'yellow': '#ffc300',  // mikado-yellow
 					'light': '#f9f5ee',   // floral-white
-					'dark': '#0f1d63',    // penn-blue
+					'dark': '#171751',    // deep-blue - updated to the new deep blue
 					
 					// Additional SCSS colors from the second palette
 					'isabelline': '#faf6f3',
 					'lavender-web': '#dfdff6',
 					'sunglow': '#ffcf31',
 					'mexican-pink': '#e51077',
-					'deep-blue': '#171751'
 				}
 			},
 			borderRadius: {
