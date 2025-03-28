@@ -8,6 +8,7 @@ import ExampleSection from '@/components/ExampleSection';
 import PersonaSection from '@/components/PersonaSection';
 import FounderStory from '@/components/FounderStory';
 import SocialProof from '@/components/SocialProof';
+import BlogPreview from '@/components/BlogPreview';
 import CTA from '@/components/CTA';
 
 const Index: React.FC = () => {
@@ -20,6 +21,7 @@ const Index: React.FC = () => {
       <PersonaSection />
       <FounderStory />
       <SocialProof />
+      <BlogPreview />
       <CTA />
     </Layout>
   );

@@ -158,6 +158,47 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
+/* Blog-specific styles */
+.prose {
+  @apply text-gray-800;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose p.lead {
+  @apply text-lg text-gray-600 mb-6;
+}
+
+.prose ul, .prose ol {
+  @apply mb-6 ml-6;
+}
+
+.prose ul li, .prose ol li {
+  @apply mb-2;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose blockquote {
+  @apply italic border-l-4 border-ume-purple pl-4 py-2 my-6 text-gray-600;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -174,4 +215,20 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ecbcd9;
+}
+
+/* For keyboard navigation accessibility */
+:focus {
+  @apply outline-none ring-2 ring-ume-purple/50;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.animate-\[shake_0\.5s_ease-in-out\] {
+  animation: shake 0.5s ease-in-out;
 }

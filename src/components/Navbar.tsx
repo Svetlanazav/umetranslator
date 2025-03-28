@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,14 +17,20 @@ const Navbar: React.FC = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-      setMobileMenuOpen(false);
+    // If we're on the homepage, scroll to the section
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If we're on another page, navigate to homepage with hash
+      window.location.href = `/#${id}`;
     }
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -37,9 +44,9 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">
             Ume
-          </div>
+          </Link>
         </div>
         
         <nav className="hidden md:flex space-x-8 items-center">
@@ -52,17 +59,23 @@ const Navbar: React.FC = () => {
           <button onClick={() => scrollToSection('story')} className="text-gray-700 hover:text-ume-purple transition-colors">
             Our Story
           </button>
+          <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors">
+            Blog
+          </Link>
           <button 
             onClick={() => scrollToSection('cta')}
-            className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all transform hover:scale-105"
+            className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
+            aria-label="Download Ume Translator"
           >
             Download Now
           </button>
         </nav>
         
         <button 
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 rounded-md p-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,9 +102,13 @@ const Navbar: React.FC = () => {
             <button onClick={() => scrollToSection('story')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
               Our Story
             </button>
+            <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors py-2">
+              Blog
+            </Link>
             <button 
               onClick={() => scrollToSection('cta')}
               className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all"
+              aria-label="Download Ume Translator"
             >
               Download Now
             </button>
