@@ -10,27 +10,19 @@ import FounderStory from '@/components/FounderStory';
 import SocialProof from '@/components/SocialProof';
 import BlogPreview from '@/components/BlogPreview';
 import CTA from '@/components/CTA';
-import FAQ from '@/components/FAQ';
-import Testimonials from '@/components/Testimonials';
-import Feedback from '@/components/Feedback';
 
 const Index: React.FC = () => {
   return (
     <Layout>
-      <div className="space-y-0">
-        <Hero />
-        <DecodeQuiz />
-        <Features />
-        <ExampleSection />
-        <PersonaSection />
-        <Testimonials />
-        <FounderStory />
-        <SocialProof />
-        <FAQ />
-        <BlogPreview />
-        <Feedback />
-        <CTA />
-      </div>
+      <Hero />
+      <DecodeQuiz />
+      <Features />
+      <ExampleSection />
+      <PersonaSection />
+      <FounderStory />
+      <SocialProof />
+      <BlogPreview />
+      <CTA />
     </Layout>
   );
 };

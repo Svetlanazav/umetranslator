@@ -10,12 +10,6 @@ const CTA: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email submitted:', email);
-    
-    // Track with PostHog
-    if (typeof window !== 'undefined' && (window as any).posthog) {
-      (window as any).posthog.capture('early_access_submitted', { email: email });
-    }
-    
     setIsSubmitted(true);
     
     // Reset after 3 seconds
@@ -29,16 +23,16 @@ const CTA: React.FC = () => {
   return (
     <section id="cta" className="py-20 relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-periwinkle/10 to-dogwood_rose/10 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-ume-purple/10 to-ume-pink/10 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Stop Guessing What They Mean – Try Ume Now!
+              Snag Ume and Slay Your Texts—NOW!
             </h2>
             <p className="text-xl text-gray-600">
-              Join thousands who've transformed their text game from confused to confident.
+              Join thousands of users who are decoding texts and transforming their relationships.
             </p>
           </div>
           
@@ -52,46 +46,16 @@ const CTA: React.FC = () => {
                 Download Now
               </button>
               <button 
-                onClick={() => {
-                  setIsModalOpen(true);
-                  // Track with PostHog
-                  if (typeof window !== 'undefined' && (window as any).posthog) {
-                    (window as any).posthog.capture('try_it_now_clicked');
-                  }
-                }}
-                className="px-8 py-4 bg-gradient-to-r from-periwinkle to-dogwood_rose text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-dogwood_rose/50 shadow-lg"
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-lg"
               >
-                Try It Free – Decode Your Texts Now
+                Try It Now
               </button>
-            </div>
-            
-            <div className="text-center mt-8 p-6 bg-white/50 rounded-xl">
-              <h3 className="text-xl font-semibold mb-2">Why Wait? Here's What You Get:</h3>
-              <ul className="text-left text-gray-600 space-y-2">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-dogwood_rose mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Instant text translations that reveal hidden meaning</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-dogwood_rose mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Flirty, clever responses that aren't awkward</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-dogwood_rose mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>100% free to try – see results in your very first conversation</span>
-                </li>
-              </ul>
             </div>
             
             <div className="text-center mt-4">
               <p className="text-gray-500">
-                Follow us on social media <a href="#" className="text-periwinkle hover:underline">@UmeTranslator</a>
+                Follow us on social media <a href="#" className="text-ume-purple hover:underline">@UmeTranslator</a>
               </p>
             </div>
           </div>
@@ -114,7 +78,7 @@ const CTA: React.FC = () => {
         ) : (
           <>
             <p className="text-gray-600 mb-6">
-              Be the first to know when Ume launches! Sign up for early access and get premium features free for 3 months.
+              Be the first to know when Ume Translator launches. Sign up for early access and exclusive perks!
             </p>
             
             <form onSubmit={handleSubmit}>
@@ -129,15 +93,15 @@ const CTA: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-periwinkle focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ume-purple focus:border-transparent outline-none transition-all"
                 />
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-periwinkle hover:bg-periwinkle/90 text-white py-3 rounded-lg transition-all transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-periwinkle/50"
+                className="w-full bg-ume-purple hover:bg-ume-purple/90 text-white py-3 rounded-lg transition-all transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
               >
-                Get Early Access + 3 Months Free
+                Get Early Access
               </button>
             </form>
             

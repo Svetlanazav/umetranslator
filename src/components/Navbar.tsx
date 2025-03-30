@@ -26,11 +26,6 @@ const Navbar: React.FC = () => {
           behavior: 'smooth'
         });
       }
-      
-      // Track with PostHog
-      if (typeof window !== 'undefined' && (window as any).posthog) {
-        (window as any).posthog.capture('navigation_click', { section: id });
-      }
     } else {
       // If we're on another page, navigate to homepage with hash
       window.location.href = `/#${id}`;
@@ -49,44 +44,35 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-periwinkle via-dogwood_rose to-mikado_yellow text-transparent bg-clip-text">
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">
             Ume
           </Link>
         </div>
         
         <nav className="hidden md:flex space-x-8 items-center">
-          <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-periwinkle transition-colors">
+          <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-ume-purple transition-colors">
             Features
           </button>
-          <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-periwinkle transition-colors">
+          <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-ume-purple transition-colors">
             Who It's For
           </button>
-          <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-periwinkle transition-colors">
-            Testimonials
+          <button onClick={() => scrollToSection('story')} className="text-gray-700 hover:text-ume-purple transition-colors">
+            Our Story
           </button>
-          <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-periwinkle transition-colors">
-            FAQ
-          </button>
-          <Link to="/blog" className="text-gray-700 hover:text-periwinkle transition-colors">
+          <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors">
             Blog
           </Link>
           <button 
-            onClick={() => {
-              scrollToSection('cta');
-              // Track with PostHog
-              if (typeof window !== 'undefined' && (window as any).posthog) {
-                (window as any).posthog.capture('download_clicked', { location: 'navbar' });
-              }
-            }}
-            className="px-4 py-2 bg-dogwood_rose hover:bg-dogwood_rose/90 text-white rounded-full transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-dogwood_rose/50"
-            aria-label="Try Ume Translator"
+            onClick={() => scrollToSection('cta')}
+            className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
+            aria-label="Download Ume Translator"
           >
-            Try It Free
+            Download Now
           </button>
         </nav>
         
         <button 
-          className="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-periwinkle/50 rounded-md p-1"
+          className="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 rounded-md p-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
@@ -107,33 +93,24 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg animate-scale">
           <div className="flex flex-col space-y-4 p-4">
-            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-periwinkle transition-colors py-2">
+            <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
               Features
             </button>
-            <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-periwinkle transition-colors py-2">
+            <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
               Who It's For
             </button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-periwinkle transition-colors py-2">
-              Testimonials
+            <button onClick={() => scrollToSection('story')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
+              Our Story
             </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-periwinkle transition-colors py-2">
-              FAQ
-            </button>
-            <Link to="/blog" className="text-gray-700 hover:text-periwinkle transition-colors py-2">
+            <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors py-2">
               Blog
             </Link>
             <button 
-              onClick={() => {
-                scrollToSection('cta');
-                // Track with PostHog
-                if (typeof window !== 'undefined' && (window as any).posthog) {
-                  (window as any).posthog.capture('download_clicked', { location: 'mobile_menu' });
-                }
-              }}
-              className="px-4 py-2 bg-dogwood_rose hover:bg-dogwood_rose/90 text-white rounded-full transition-all"
-              aria-label="Try Ume Translator"
+              onClick={() => scrollToSection('cta')}
+              className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all"
+              aria-label="Download Ume Translator"
             >
-              Try It Free
+              Download Now
             </button>
           </div>
         </div>
