@@ -10,6 +10,9 @@ import FounderStory from '@/components/FounderStory';
 import SocialProof from '@/components/SocialProof';
 import BlogPreview from '@/components/BlogPreview';
 import CTA from '@/components/CTA';
+import FAQ from '@/components/FAQ';
+import Testimonials from '@/components/Testimonials';
+import Feedback from '@/components/Feedback';
 
 const Index: React.FC = () => {
   return (
@@ -19,9 +22,12 @@ const Index: React.FC = () => {
       <Features />
       <ExampleSection />
       <PersonaSection />
+      <Testimonials />
       <FounderStory />
       <SocialProof />
+      <FAQ />
       <BlogPreview />
+      <Feedback />
       <CTA />
     </Layout>
   );
