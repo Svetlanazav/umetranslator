@@ -17,18 +17,20 @@ import Feedback from '@/components/Feedback';
 const Index: React.FC = () => {
   return (
     <Layout>
-      <Hero />
-      <DecodeQuiz />
-      <Features />
-      <ExampleSection />
-      <PersonaSection />
-      <Testimonials />
-      <FounderStory />
-      <SocialProof />
-      <FAQ />
-      <BlogPreview />
-      <Feedback />
-      <CTA />
+      <div className="space-y-0">
+        <Hero />
+        <DecodeQuiz />
+        <Features />
+        <ExampleSection />
+        <PersonaSection />
+        <Testimonials />
+        <FounderStory />
+        <SocialProof />
+        <FAQ />
+        <BlogPreview />
+        <Feedback />
+        <CTA />
+      </div>
     </Layout>
   );
 };
