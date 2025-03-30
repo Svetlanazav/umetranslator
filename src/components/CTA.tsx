@@ -29,7 +29,7 @@ const CTA: React.FC = () => {
         <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Snag Ume and Slay Your Texts—NOW!
+              Stop Guessing, Start Connecting—Try Ume Now!
             </h2>
             <p className="text-xl text-gray-600">
               Join thousands of users who are decoding texts and transforming their relationships.
@@ -46,10 +46,14 @@ const CTA: React.FC = () => {
                 Download Now
               </button>
               <button 
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  // If we had PostHog tracking, we'd add it here
+                  // posthog.capture('early_access_clicked');
+                }}
                 className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-lg"
               >
-                Try It Now
+                Get Early Access
               </button>
             </div>
             
@@ -72,7 +76,7 @@ const CTA: React.FC = () => {
             </div>
             <h4 className="text-xl font-medium text-gray-800 mb-2">Thank You!</h4>
             <p className="text-gray-600">
-              We'll notify you as soon as Ume is ready to launch.
+              We'll notify you as soon as Ume is ready to launch. Get ready to transform your texting game!
             </p>
           </div>
         ) : (
