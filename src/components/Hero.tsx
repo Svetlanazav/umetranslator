@@ -1,6 +1,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
+import StatsSection from './StatsSection';
+import HeroInfo from './HeroInfo';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -47,30 +49,25 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 space-y-6 max-w-xl">
-            {/* Tag */}
-            <div className="inline-block bg-ume-purple/10 text-ume-purple px-4 py-1 rounded-full text-sm font-medium animate-fade-in">
-              Let's be honest. We've all faced:
+            {/* Pain Points (simplified) */}
+            <div className="flex flex-wrap gap-4 animate-fade-in">
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                <span className="text-xl">😖</span>
+                <span className="font-medium">K</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                <span className="text-xl">😡</span>
+                <span className="font-medium">Flop</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                <span className="text-xl">🤔</span>
+                <span className="font-medium">Fine</span>
+              </div>
             </div>
             
-            {/* Pain Points */}
-            <ul className="text-gray-600 text-lg space-y-2 animate-fade-in">
-              <li className="flex items-start gap-2">
-                <span className="text-xl">😖</span>
-                <span>That awkward "K" that leaves you spiraling—<em>Are they mad or just busy?</em></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-xl">😡</span>
-                <span>A flirty "Hey cutie" that gets a flat "lol ok"—<em>total vibe killer.</em></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-xl">🤔</span>
-                <span>"I'm fine" staring you down—<em>what did I do wrong this time?</em></span>
-              </li>
-            </ul>
-            
-            {/* Headline - Updated as requested */}
+            {/* Headline - Simplified */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-              Ume Translator: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">Fixes That Mess</span>
+              Ume: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">Decode. Flirt. Win.</span>
             </h1>
             
             {/* New subheadline */}
@@ -78,64 +75,32 @@ const Hero: React.FC = () => {
               The Only App That Decodes Texts AND Flirts for You!
             </p>
             
-            {/* Statistics section */}
-            <div className="bg-white/70 p-5 rounded-xl shadow-sm border border-gray-100 animate-fade-in-delayed">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-ume-purple">51% / 49%</span>
-                  <p className="text-gray-600 text-sm">guys vs gals misinterpret texts daily</p>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-ume-pink">80%</span>
-                  <p className="text-gray-600 text-sm">of relationships hinge on texting</p>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-ume-yellow">68%</span>
-                  <p className="text-gray-600 text-sm">of texters misread 'LOL'</p>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-ume-purple">53%</span>
-                  <p className="text-gray-600 text-sm">overthink 'What's up?'</p>
-                </div>
+            {/* Core benefits with icons */}
+            <div className="flex flex-wrap gap-y-2 gap-x-6 animate-fade-in-delayed">
+              <div className="flex items-center gap-2">
+                <span className="text-ume-purple">💬</span>
+                <span className="text-gray-700">Decode</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-ume-pink">😎</span>
+                <span className="text-gray-700">Flirt</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-ume-yellow">❤️</span>
+                <span className="text-gray-700">Connect</span>
               </div>
             </div>
             
-            {/* And we can all do better */}
-            <p className="text-xl text-gray-600 animate-fade-in-delayed">
-              And we can all do better with text:
-            </p>
-            
-            <ul className="text-gray-600 text-lg space-y-2 animate-fade-in-delayed">
-              <li className="flex items-start gap-2">
-                <span>💬</span>
-                <span>Decode their cryptic replies with AI that <em>gets it</em>.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>😎</span>
-                <span>Flirt like a pro with sass, zero cringe.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>❤️</span>
-                <span>Understand your partner—no guesswork needed.</span>
-              </li>
-            </ul>
-            
-            {/* Clarify Who/What/Why */}
-            <div className="bg-gray-50 p-4 rounded-lg animate-fade-in-delayed">
-              <p className="text-gray-700">
-                <strong>Who's it for?</strong> Anyone texting a partner, crush, or fling.<br />
-                <strong>What is it?</strong> A free app that decodes messages and suggests replies.<br />
-                <strong>Why you need it?</strong> Stop guessing, start connecting—80% of relationships depend on texting!
-              </p>
-            </div>
+            {/* Info Section */}
+            <HeroInfo />
             
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delayed">
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 shadow-lg"
+                className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ume-purple/50 shadow-md"
               >
-                Try it Free – Decode Your Texts Now
+                Try Free
               </button>
               <button 
                 onClick={() => {
@@ -152,17 +117,20 @@ const Hero: React.FC = () => {
                 Learn More
               </button>
             </div>
+            
+            {/* Stats Section */}
+            <StatsSection />
           </div>
           
           {/* Right side - Try Ume Live component */}
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">
               {/* Phone mockup */}
-              <div className="glass-card p-8 rounded-3xl shadow-xl animate-float parallax-element">
+              <div className="glass-card p-8 rounded-3xl shadow-xl animate-float parallax-element transition-transform hover:scale-[1.02]">
                 {/* App interface mockup */}
                 <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-inner">
                   {/* App header */}
-                  <div className="bg-ume-purple p-4 text-white text-center">
+                  <div className="bg-gradient-to-r from-ume-purple to-ume-pink p-4 text-white text-center">
                     <div className="text-lg font-semibold">Try Ume Live!</div>
                   </div>
                   
@@ -176,7 +144,7 @@ const Hero: React.FC = () => {
                     </div>
                     
                     <div className="flex gap-3 justify-end">
-                      <div className="bg-ume-purple/80 rounded-2xl p-3 max-w-[80%] text-white">
+                      <div className="bg-gradient-to-r from-ume-purple to-ume-pink rounded-2xl p-3 max-w-[80%] text-white">
                         Ume Translator: "They're just busy, not mad. Reply with 'Miss you!'"
                       </div>
                       <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
@@ -193,11 +161,11 @@ const Hero: React.FC = () => {
                             result.classList.remove('hidden');
                           }
                         }}
-                        className="w-full bg-ume-purple text-white py-2 rounded-lg"
+                        className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-2 rounded-lg transform hover:scale-[1.02] transition-all"
                       >
                         Translate It
                       </button>
-                      <div className="translation-result hidden mt-3 bg-ume-purple/80 text-white p-3 rounded-lg">
+                      <div className="translation-result hidden mt-3 bg-gradient-to-r from-ume-purple to-ume-pink text-white p-3 rounded-lg">
                         Ume: "They're upset. Try 'Wanna talk about it?'"
                       </div>
                     </div>
@@ -232,7 +200,7 @@ const Hero: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-all"
             >
               Notify Me
             </button>

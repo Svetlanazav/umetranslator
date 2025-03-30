@@ -1,74 +1,148 @@
 
-import React from 'react';
-import FeatureCard from './FeatureCard';
+import React, { useState } from 'react';
+import { Sparkles, MessageSquare, Brain, AlertTriangle } from 'lucide-react';
+import Modal from './Modal';
 
 const Features: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  
   const features = [
     {
       title: "Decode Any Text",
-      description: "Uncover the real meaning behind those cryptic messages, whether it's 'fine' (not fine) or 'whatever' (definitely not whatever).",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      )
+      description: "They text 'Whatever'—Ume says, 'They're mad, babe—don't sleep on this!'",
+      icon: <MessageSquare className="h-6 w-6 text-white" />,
+      color: "bg-ume-purple border-ume-purple/20",
+      example: "When they say 'Whatever' → Ume decodes the passive aggression and helps you respond appropriately."
     },
     {
       title: "Flirt Mode",
-      description: "Not sure if they're flirting or just being nice? Ume's flirt detection algorithm spots those subtle hints you might be missing.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
+      description: "'Nice chatting with you' becomes, 'Too much fun with you—consider me caught!'",
+      icon: <Sparkles className="h-6 w-6 text-white" />,
+      color: "bg-ume-pink border-ume-pink/20",
+      example: "Turn 'Had a good time' into 'Can't stop thinking about that laugh of yours' with Ume's flirt suggestions."
     },
     {
       title: "Context Clues",
-      description: "Ume analyzes conversation history to give you accurate interpretations based on your unique relationship dynamics.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-        </svg>
-      )
+      description: "'I'm good' after a fight? Ume digs in: 'They're still salty—tread soft, tiger!'",
+      icon: <Brain className="h-6 w-6 text-white" />,
+      color: "bg-ume-yellow border-ume-yellow/20",
+      example: "Ume recognizes when 'I'm fine' isn't fine at all, and helps you navigate sensitive conversations."
     },
     {
       title: "Manipulation Radar",
-      description: "Spot red flags early. Ume helps you identify manipulative language and emotional triggers before they become a problem.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-        </svg>
-      )
+      description: "'You always do this'—Ume flags it: 'Guilt trip alert—watch your step!'",
+      icon: <AlertTriangle className="h-6 w-6 text-white" />,
+      color: "bg-red-500 border-red-200",
+      example: "Ume helps you identify and respond to manipulative language in your conversations."
     }
   ];
   
+  const handleFeatureClick = (index: number) => {
+    if (activeFeature === index) {
+      setActiveFeature(null);
+    } else {
+      setActiveFeature(index);
+    }
+  };
+  
   return (
-    <section id="features" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+    <section id="features" className="py-20 bg-gradient-to-r from-ume-purple/5 to-ume-pink/5 relative">
+      {/* Background gradient elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-ume-pink/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-ume-purple/20 to-transparent rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
           <div className="inline-block bg-ume-purple/10 text-ume-purple px-4 py-1 rounded-full text-sm font-medium">
             Features
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
-            Why Ume's Your New Love BFF
+            From Text Fails to Epic Tales—Ume's Got You Covered!
           </h2>
-          <p className="text-xl text-gray-600">
-            Navigate the complex world of digital communication with confidence using our suite of powerful features.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our smart features decode, enhance, and transform your text conversations.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              title={feature.title}
-              description={feature.description}
-              icon={feature.icon}
-              index={index}
-            />
+            <div 
+              key={index} 
+              className={`glass-card p-6 border-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md cursor-pointer ${activeFeature === index ? 'border-' + feature.color.split(' ')[0].substring(3) : 'border-transparent'}`}
+              onClick={() => handleFeatureClick(index)}
+            >
+              <div className="flex items-start gap-4">
+                <div className={`${feature.color} p-3 rounded-lg`}>
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                  
+                  {activeFeature === index && (
+                    <div className="mt-4 p-3 bg-gray-50 rounded-lg animate-fade-in">
+                      <p className="text-sm text-gray-700">{feature.example}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+        
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+          <div className="md:w-1/4 flex justify-center">
+            <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" 
+                alt="Founder" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="md:w-3/4">
+            <div className="text-xl italic text-gray-700 mb-4">
+              "It all started with a chat so cringe it hurt— so I built this app to turn texts into clear, clever, and a bit flirty gold!"
+            </div>
+            <p className="text-ume-purple font-semibold">– Founder, the sassy voice behind Ume</p>
+            
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="mt-6 px-6 py-3 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ume-pink/50"
+            >
+              Try Free
+            </button>
+          </div>
+        </div>
       </div>
+      
+      {/* Modal for CTA button */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+          <p className="text-gray-600 mb-4">
+            Ume is currently in final development. Sign up to be the first to know when we launch!
+          </p>
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </Modal>
     </section>
   );
 };

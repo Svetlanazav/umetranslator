@@ -3,55 +3,73 @@ import React, { useState } from 'react';
 
 const FeedbackSection: React.FC = () => {
   const [feedback, setFeedback] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Feedback submitted:', feedback);
-    setSubmitted(true);
+    setIsSubmitted(true);
     
     // Reset after 3 seconds
     setTimeout(() => {
-      setSubmitted(false);
+      setIsSubmitted(false);
       setFeedback('');
     }, 3000);
   };
   
   return (
-    <section id="feedback" className="py-20 bg-gradient-to-b from-ume-light to-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Has Something to Say? We Hear You!</h2>
-          <p className="text-gray-600 mb-8">Share your ideas and thoughts with us. We're constantly improving Ume based on your feedback.</p>
+        <div className="max-w-3xl mx-auto glass-card p-8">
+          <div className="text-center mb-8">
+            <div className="inline-block bg-ume-yellow/10 text-ume-yellow px-4 py-1 rounded-full text-sm font-medium">
+              Feedback
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mt-4 mb-2">
+              Have Something to Say? We Hear You!
+            </h2>
+            <p className="text-gray-600">
+              Share your ideas and thoughts with us. We're constantly improving Ume based on your feedback.
+            </p>
+          </div>
           
-          {submitted ? (
-            <div className="glass-card p-8 text-center">
+          {isSubmitted ? (
+            <div className="text-center py-6 animate-fade-in">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Thank You!</h3>
+              <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
               <p className="text-gray-600">
-                We appreciate your feedback and will use it to make Ume even better.
+                Your feedback has been received. We appreciate your input!
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="glass-card p-8">
-              <textarea 
-                rows={4} 
-                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ume-purple focus:border-transparent outline-none transition-all"
-                placeholder="Tell us what's on your mind..."
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-                required
-              ></textarea>
-              <button 
-                type="submit"
-                className="mt-4 px-8 py-3 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
-              >
-                Send It
-              </button>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="feedback" className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Feedback
+                </label>
+                <textarea
+                  id="feedback"
+                  rows={4}
+                  value={feedback}
+                  onChange={(e) => setFeedback(e.target.value)}
+                  placeholder="Tell us what's on your mind..."
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ume-purple focus:border-transparent outline-none"
+                  required
+                ></textarea>
+              </div>
+              
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
+                >
+                  Send It
+                </button>
+              </div>
             </form>
           )}
         </div>

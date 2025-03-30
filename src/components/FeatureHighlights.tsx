@@ -80,9 +80,9 @@ const FeatureHighlights: React.FC = () => {
             
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="mt-6 px-6 py-3 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-md"
+              className="mt-6 px-6 py-3 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ume-pink/50"
             >
-              Download Ume—Unlock the Text Secrets!
+              Try Free
             </button>
           </div>
         </div>
@@ -107,7 +107,7 @@ const FeatureHighlights: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
             >
               Notify Me
             </button>

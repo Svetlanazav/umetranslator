@@ -26,7 +26,7 @@ const CTA: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-ume-purple/10 to-ume-pink/10 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
+        <div className="max-w-4xl mx-auto glass-card p-8 md:p-12 transition-all hover:shadow-lg">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Stop Guessing, Start Connecting—Try Ume Now!
@@ -39,9 +39,9 @@ const CTA: React.FC = () => {
           <div className="flex flex-col items-center gap-6">
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-lg"
+              className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ume-pink/50"
             >
-              Get Early Access
+              Try Free
             </button>
             
             <div className="text-center mt-4">
@@ -90,7 +90,7 @@ const CTA: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full bg-ume-purple hover:bg-ume-purple/90 text-white py-3 rounded-lg transition-all transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
+                className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg transition-all transform hover:scale-[1.01] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
               >
                 Get Early Access
               </button>

@@ -46,34 +46,44 @@ const Navbar: React.FC = () => {
         )}
       >
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between md:justify-center">
-            <div className="md:absolute md:left-4">
-              <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">
-                Ume
-              </Link>
-            </div>
+          <div className="flex items-center justify-between">
+            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text transition-transform hover:scale-105">
+              Ume
+            </Link>
             
-            <nav className="hidden md:flex space-x-8 items-center">
-              <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-ume-purple transition-colors">
+            <nav className="hidden md:flex items-center space-x-8">
+              <button 
+                onClick={() => scrollToSection('features')} 
+                className="text-gray-700 hover:text-ume-purple transition-colors relative group"
+              >
                 Features
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
               </button>
-              <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-ume-purple transition-colors">
+              <button 
+                onClick={() => scrollToSection('who-its-for')} 
+                className="text-gray-700 hover:text-ume-purple transition-colors relative group"
+              >
                 Who It's For
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
               </button>
-              <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors">
+              <Link 
+                to="/blog" 
+                className="text-gray-700 hover:text-ume-purple transition-colors relative group"
+              >
                 Blog
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
               </Link>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
-                aria-label="Get early access to Ume Translator"
+                className="px-4 py-2 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full transition-all transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ume-purple/50"
+                aria-label="Try Ume for free"
               >
-                Try it Free
+                Try Free
               </button>
             </nav>
             
             <button 
-              className="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 rounded-md p-1 md:absolute md:right-4"
+              className="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 rounded-md p-1"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
@@ -94,14 +104,14 @@ const Navbar: React.FC = () => {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white shadow-lg animate-scale">
-            <div className="flex flex-col items-center space-y-4 p-4">
-              <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
+            <div className="flex flex-col items-center space-y-4 p-6">
+              <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center">
                 Features
               </button>
-              <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-ume-purple transition-colors py-2">
+              <button onClick={() => scrollToSection('who-its-for')} className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center">
                 Who It's For
               </button>
-              <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors py-2">
+              <Link to="/blog" className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center">
                 Blog
               </Link>
               <button 
@@ -109,10 +119,10 @@ const Navbar: React.FC = () => {
                   setMobileMenuOpen(false);
                   setIsModalOpen(true);
                 }}
-                className="px-4 py-2 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full transition-all"
-                aria-label="Get early access to Ume Translator"
+                className="px-6 py-2 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full transition-all w-full"
+                aria-label="Try Ume for free"
               >
-                Try it Free
+                Try Free
               </button>
             </div>
           </div>
@@ -138,7 +148,7 @@ const Navbar: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
             >
               Notify Me
             </button>

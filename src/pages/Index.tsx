@@ -20,10 +20,9 @@ const Index: React.FC = () => {
     <Layout>
       <Hero />
       <CaseStudy />
-      <FeatureHighlights />
+      <Features />
       <PersonaSection />
       <ExampleSection />
-      <Features />
       <SocialProof />
       <Testimonials />
       <FAQSection />

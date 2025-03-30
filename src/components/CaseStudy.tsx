@@ -8,9 +8,9 @@ const CaseStudy: React.FC = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-ume-light to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto glass-card p-8">
+        <div className="max-w-3xl mx-auto glass-card p-8 transition-all hover:shadow-md transform hover:-translate-y-1">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-ume-purple rounded-full flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 bg-gradient-to-r from-ume-purple to-ume-pink rounded-full flex items-center justify-center text-white font-bold">
               A
             </div>
             <div>
@@ -33,9 +33,9 @@ const CaseStudy: React.FC = () => {
             </div>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="px-4 py-2 bg-ume-purple/10 text-ume-purple rounded-full text-sm font-medium hover:bg-ume-purple/20 transition-colors"
+              className="px-4 py-2 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full text-sm font-medium hover:shadow-md transition-all transform hover:scale-105"
             >
-              Try Ume Now
+              Try Free
             </button>
           </div>
         </div>
@@ -60,7 +60,7 @@ const CaseStudy: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
             >
               Notify Me
             </button>
