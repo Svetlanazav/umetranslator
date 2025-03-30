@@ -1,38 +1,38 @@
-
-import React from 'react';
+import React from "react";
 
 const ExampleSection: React.FC = () => {
   const examples = [
     {
-      title: "The "Fine" Fake-Out",
+      title: "The Fine Fake-Out",
       text: "I'm fine",
       decode: {
         manToWoman: "She's not fine—ask 'Wanna talk, babe?'",
-        womanToMan: "He's hiding—say 'Spill it, tough guy!'"
+        womanToMan: "He's hiding—say 'Spill it, tough guy!'",
       },
       emoji: "🧐",
-      detailEmoji: "😏"
+      detailEmoji: "😏",
     },
     {
-      title: "The "Busy Bee"",
+      title: "The Busy Bee",
       text: "Busy week, ttyl",
       decode: {
-        manToWoman: "He's dodging—try 'Too busy to miss me?'"
+        manToWoman: "He's dodging—try 'Too busy to miss me?'",
       },
       emoji: "🐝",
-      detailEmoji: "😏"
+      detailEmoji: "😏",
     },
     {
       title: "Make it Flirt",
       text: "Wanna grab coffee sometime",
       decode: {
-        flirtStyle: "How about coffee and some steamy eye contact—when's my VIP slot?"
+        flirtStyle:
+          "How about coffee and some steamy eye contact—when's my VIP slot?",
       },
       emoji: "☕",
-      detailEmoji: "😏"
-    }
+      detailEmoji: "😏",
+    },
   ];
-  
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -44,14 +44,15 @@ const ExampleSection: React.FC = () => {
             From Text Confusion to Text Confidence
           </h2>
           <p className="text-xl text-gray-600">
-            See how Ume translates real-world texts and helps you respond with confidence.
+            See how Ume translates real-world texts and helps you respond with
+            confidence.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {examples.map((example, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="glass-card p-6 rounded-xl transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 150}ms` }}
             >
@@ -64,7 +65,7 @@ const ExampleSection: React.FC = () => {
                   "{example.text}"
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-r from-ume-purple/80 to-ume-pink/80 p-4 rounded-lg text-white">
                 <div className="flex items-start gap-2 mb-2">
                   <span>✨</span>
@@ -72,7 +73,9 @@ const ExampleSection: React.FC = () => {
                 </div>
                 {example.decode.manToWoman && (
                   <div className="mb-2">
-                    <div className="text-sm text-white/80 mb-1">Man-to-Woman:</div>
+                    <div className="text-sm text-white/80 mb-1">
+                      Man-to-Woman:
+                    </div>
                     <div className="flex items-start gap-1">
                       <span>{example.detailEmoji}</span>
                       <p>"{example.decode.manToWoman}"</p>
@@ -81,7 +84,9 @@ const ExampleSection: React.FC = () => {
                 )}
                 {example.decode.womanToMan && (
                   <div className="mb-2">
-                    <div className="text-sm text-white/80 mb-1">Woman-to-Man:</div>
+                    <div className="text-sm text-white/80 mb-1">
+                      Woman-to-Man:
+                    </div>
                     <div className="flex items-start gap-1">
                       <span>{example.detailEmoji}</span>
                       <p>"{example.decode.womanToMan}"</p>
@@ -90,7 +95,9 @@ const ExampleSection: React.FC = () => {
                 )}
                 {example.decode.flirtStyle && (
                   <div>
-                    <div className="text-sm text-white/80 mb-1">Flirt Style:</div>
+                    <div className="text-sm text-white/80 mb-1">
+                      Flirt Style:
+                    </div>
                     <div className="flex items-start gap-1">
                       <span>{example.detailEmoji}</span>
                       <p>"{example.decode.flirtStyle}"</p>
