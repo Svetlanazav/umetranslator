@@ -1,7 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const CaseStudy: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   return (
     <section className="py-16 bg-gradient-to-b from-ume-light to-white">
       <div className="container mx-auto px-4">
@@ -20,7 +23,7 @@ const CaseStudy: React.FC = () => {
             "I texted 'You free tonight?' and got 'Maybe.' I was about to give up, but Ume told me she was playing coy and suggested 'Only if you say yes first.' She laughed and said yes! We've been dating for 2 months now."
           </div>
           
-          <div className="mt-6 flex">
+          <div className="mt-6 flex justify-between items-center">
             <div className="flex text-ume-yellow">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -28,9 +31,42 @@ const CaseStudy: React.FC = () => {
                 </svg>
               ))}
             </div>
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-4 py-2 bg-ume-purple/10 text-ume-purple rounded-full text-sm font-medium hover:bg-ume-purple/20 transition-colors"
+            >
+              Try Ume Now
+            </button>
           </div>
         </div>
       </div>
+      
+      {/* Modal for CTA buttons */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+          <p className="text-gray-600 mb-4">
+            Ume is currently in final development. Sign up to be the first to know when we launch!
+          </p>
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </Modal>
     </section>
   );
 };

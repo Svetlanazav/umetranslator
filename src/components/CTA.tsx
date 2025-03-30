@@ -37,25 +37,12 @@ const CTA: React.FC = () => {
           </div>
           
           <div className="flex flex-col items-center gap-6">
-            <div className="flex flex-wrap justify-center gap-4">
-              <button 
-                className="px-8 py-4 bg-gray-200 text-gray-500 rounded-full font-medium opacity-70 cursor-not-allowed"
-                disabled
-                aria-label="Download button disabled as app is not yet released"
-              >
-                Download Now
-              </button>
-              <button 
-                onClick={() => {
-                  setIsModalOpen(true);
-                  // If we had PostHog tracking, we'd add it here
-                  // posthog.capture('early_access_clicked');
-                }}
-                className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-lg"
-              >
-                Get Early Access
-              </button>
-            </div>
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-gradient-to-r from-ume-purple to-ume-pink text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-pink/50 shadow-lg"
+            >
+              Get Early Access
+            </button>
             
             <div className="text-center mt-4">
               <p className="text-gray-500">

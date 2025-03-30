@@ -1,18 +1,12 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, MessageSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Modal from './Modal';
 
 const ExampleSection: React.FC = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="py-24 bg-gradient-to-br from-white to-ume-purple/5 relative overflow-hidden">
@@ -34,17 +28,17 @@ const ExampleSection: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Example 1: The Milk Mishap */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Example 1: The "Fine" Fake-Out */}
             <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
               <div className="bg-ume-purple/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Milk Mishap</h3>
+                <h3 className="font-bold text-lg text-gray-800">The "Fine" Fake-Out</h3>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
                   <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"You forgot the milk again"</p>
+                    <p className="text-gray-700">"I'm fine"</p>
                   </div>
                 </div>
                 
@@ -52,32 +46,41 @@ const ExampleSection: React.FC = () => {
                   <ArrowDown className="text-ume-purple animate-bounce" />
                 </div>
                 
-                <div className="bg-ume-purple/10 rounded-xl p-4 mb-4">
-                  <div className="text-xs text-gray-500 mb-1">Ume Decode:</div>
-                  <div className="font-medium text-ume-purple">
-                    Woman-to-Man: "She's low-key mad you're not her dairy hero—step it up, champ!"
+                <div className="space-y-3">
+                  <div className="bg-ume-purple/10 rounded-xl p-3">
+                    <div className="text-xs text-gray-500 mb-1">Man-to-Woman:</div>
+                    <div className="font-medium text-sm text-ume-purple">
+                      "She's not fine—ask 'Wanna talk, babe?'"
+                    </div>
+                  </div>
+                  
+                  <div className="bg-ume-pink/10 rounded-xl p-3">
+                    <div className="text-xs text-gray-500 mb-1">Woman-to-Man:</div>
+                    <div className="font-medium text-sm text-ume-pink">
+                      "He's hiding—say 'Spill it, tough guy!'"
+                    </div>
                   </div>
                 </div>
                 
                 <div className="flex gap-3 items-center mt-6">
-                  <div className="w-10 h-10 rounded-full bg-ume-pink/20 flex items-center justify-center">
-                    <MessageSquare size={18} className="text-ume-pink" />
+                  <div className="w-10 h-10 rounded-full bg-ume-purple/20 flex items-center justify-center">
+                    <span className="text-lg">🧐</span>
                   </div>
-                  <p className="text-sm text-gray-600">A playful reminder that small errands = big brownie points</p>
+                  <p className="text-sm text-gray-600">Left: A "fine" bubble with skepticism. Right: Ume's actual decode.</p>
                 </div>
               </CardContent>
             </Card>
             
-            {/* Example 2: The Date Check */}
+            {/* Example 2: The "Busy Bee" */}
             <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
               <div className="bg-ume-pink/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Date Check</h3>
+                <h3 className="font-bold text-lg text-gray-800">The "Busy Bee"</h3>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
                   <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"Are we still on for tonight?"</p>
+                    <p className="text-gray-700">"Busy week, ttyl"</p>
                   </div>
                 </div>
                 
@@ -86,31 +89,31 @@ const ExampleSection: React.FC = () => {
                 </div>
                 
                 <div className="bg-ume-pink/10 rounded-xl p-4 mb-4">
-                  <div className="text-xs text-gray-500 mb-1">Ume Decode:</div>
+                  <div className="text-xs text-gray-500 mb-1">Man-to-Woman:</div>
                   <div className="font-medium text-ume-pink">
-                    Man-to-Woman: "He's checking if you're still into him—don't leave him hanging!"
+                    "He's dodging—try 'Too busy to miss me?'"
                   </div>
                 </div>
                 
                 <div className="flex gap-3 items-center mt-6">
-                  <div className="w-10 h-10 rounded-full bg-ume-purple/20 flex items-center justify-center">
-                    <MessageSquare size={18} className="text-ume-purple" />
+                  <div className="w-10 h-10 rounded-full bg-ume-yellow/30 flex items-center justify-center">
+                    <span className="text-lg">🐝</span>
                   </div>
-                  <p className="text-sm text-gray-600">A before/after bubble—raw text vs. Ume's Decode glow-up</p>
+                  <p className="text-sm text-gray-600">A busy bee buzzing off vs. Ume's sly suggestion</p>
                 </div>
               </CardContent>
             </Card>
             
-            {/* Example 3: The Tired Hint */}
+            {/* Example 3: Make it Flirt */}
             <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
               <div className="bg-ume-yellow/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Tired Hint</h3>
+                <h3 className="font-bold text-lg text-gray-800">Make it Flirt</h3>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
                   <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"I'm kinda too tired today to go out"</p>
+                    <p className="text-gray-700">"Wanna grab coffee sometime"</p>
                   </div>
                 </div>
                 
@@ -121,123 +124,6 @@ const ExampleSection: React.FC = () => {
                 <div className="bg-ume-yellow/10 rounded-xl p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">Flirt Style Transform:</div>
                   <div className="font-medium text-gray-700">
-                    "I'm dreaming of a cozy night with you—wanna join?"
-                  </div>
-                </div>
-                
-                <div className="flex gap-3 items-center mt-6">
-                  <div className="w-10 h-10 rounded-full bg-ume-yellow/30 flex items-center justify-center">
-                    <span className="text-lg">😴</span>
-                  </div>
-                  <p className="text-sm text-gray-600">A cozy vibe paired with Ume's cheeky output</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Example 4: The Outfit Panic */}
-            <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
-              <div className="bg-ume-purple/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Outfit Panic</h3>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
-                  <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"Do I look okay in this?"</p>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center my-4">
-                  <ArrowDown className="text-ume-purple animate-bounce" />
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="bg-ume-pink/10 rounded-xl p-3">
-                    <div className="text-xs text-gray-500 mb-1">Context 1: Glow-Up Check</div>
-                    <div className="font-medium text-sm text-ume-pink">
-                      "She's begging for a hype—hit her with, 'Girl, you're serving looks!'"
-                    </div>
-                  </div>
-                  
-                  <div className="bg-ume-purple/10 rounded-xl p-3">
-                    <div className="text-xs text-gray-500 mb-1">Context 2: Freak-Out Mode</div>
-                    <div className="font-medium text-sm text-ume-purple">
-                      "She's spiraling over sequins—say, 'You're slaying, babe, own it!'"
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex gap-3 items-center mt-6">
-                  <div className="w-10 h-10 rounded-full bg-ume-pink/20 flex items-center justify-center">
-                    <span className="text-lg">👗</span>
-                  </div>
-                  <p className="text-sm text-gray-600">A mini wardrobe scene with Ume's multi-angle breakdown</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Example 5: The Rain Check */}
-            <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
-              <div className="bg-ume-pink/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Rain Check</h3>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
-                  <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"I'm swamped today—rain check?"</p>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center my-4">
-                  <ArrowDown className="text-ume-pink animate-bounce" />
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="bg-ume-purple/10 rounded-xl p-3">
-                    <div className="text-xs text-gray-500 mb-1">Man-to-Woman:</div>
-                    <div className="font-medium text-sm text-ume-purple">
-                      "He's drowning in work, not ditching you—chill, queen!"
-                    </div>
-                  </div>
-                  
-                  <div className="bg-ume-pink/10 rounded-xl p-3">
-                    <div className="text-xs text-gray-500 mb-1">Flirt Style Version:</div>
-                    <div className="font-medium text-sm text-ume-pink">
-                      "I'm tangled in chaos, but I'd untangle the world for a night with you!"
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex gap-3 items-center mt-6">
-                  <div className="w-10 h-10 rounded-full bg-ume-purple/20 flex items-center justify-center">
-                    <span className="text-lg">📅</span>
-                  </div>
-                  <p className="text-sm text-gray-600">A chaotic desk vs. Ume's smooth translation</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Example 6: The Vague Date Invite */}
-            <Card className="glass-card overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg">
-              <div className="bg-ume-purple/20 p-4">
-                <h3 className="font-bold text-lg text-gray-800">The Vague Date Invite</h3>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
-                  <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                    <p className="text-gray-700">"Wanna grab coffee sometime?" (A Tinder match drops this—hot or not?)</p>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center my-4">
-                  <ArrowDown className="text-ume-purple animate-bounce" />
-                </div>
-                
-                <div className="bg-ume-pink/10 rounded-xl p-4 mb-4">
-                  <div className="text-xs text-gray-500 mb-1">Flirt Style Transform:</div>
-                  <div className="font-medium text-ume-pink">
                     "How about coffee and some steamy eye contact—when's my VIP slot?"
                   </div>
                 </div>
@@ -246,20 +132,20 @@ const ExampleSection: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-ume-yellow/30 flex items-center justify-center">
                     <span className="text-lg">😏</span>
                   </div>
-                  <p className="text-sm text-gray-600">The smirk vs. Ume's smooth translation</p>
+                  <p className="text-sm text-gray-600">Light the spark before you see them!</p>
                 </div>
               </CardContent>
             </Card>
             
             {/* Call to Action Card */}
-            <Card className="md:col-span-2 lg:col-span-3 glass-card overflow-hidden transform transition-all shadow-lg bg-gradient-to-r from-ume-purple/20 via-ume-pink/20 to-ume-yellow/20">
+            <Card className="md:col-span-3 glass-card overflow-hidden transform transition-all shadow-lg bg-gradient-to-r from-ume-purple/20 via-ume-pink/20 to-ume-yellow/20">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to decode your own texts?</h3>
                 <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto">
-                  Scroll up and snag Ume Translator—your love life's about to get a whole lot spicier!
+                  Ume Translator is your love life's secret weapon—try it now!
                 </p>
                 <Button 
-                  onClick={() => scrollToSection('cta')}
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-ume-purple hover:bg-ume-purple/90 text-white px-8 py-6 rounded-full font-medium transition-all transform hover:scale-105"
                   size="lg"
                 >
@@ -270,6 +156,33 @@ const ExampleSection: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Modal for CTA buttons */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+          <p className="text-gray-600 mb-4">
+            Ume is currently in final development. Sign up to be the first to know when we launch!
+          </p>
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </Modal>
     </section>
   );
 };

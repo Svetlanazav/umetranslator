@@ -1,7 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Testimonials: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   return (
     <section className="py-20 bg-gradient-to-b from-white to-ume-light">
       <div className="container mx-auto px-4">
@@ -14,10 +17,12 @@ const Testimonials: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card p-6 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-ume-pink/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ume-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80" 
+                    alt="Jamie" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium">Jamie, 24</div>
@@ -40,10 +45,12 @@ const Testimonials: React.FC = () => {
             
             <div className="glass-card p-6 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-ume-purple/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ume-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80" 
+                    alt="Sam" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium">Sam, 31</div>
@@ -66,10 +73,12 @@ const Testimonials: React.FC = () => {
             
             <div className="glass-card p-6 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-ume-yellow/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ume-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80" 
+                    alt="Social Influencer" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium">Social Mention</div>
@@ -90,8 +99,44 @@ const Testimonials: React.FC = () => {
               </div>
             </div>
           </div>
+          
+          <div className="mt-10 text-center">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-6 py-3 bg-ume-purple/10 text-ume-purple hover:bg-ume-purple/20 rounded-full transition-colors"
+            >
+              Join Them Today
+            </button>
+          </div>
         </div>
       </div>
+      
+      {/* Modal for CTA button */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+          <p className="text-gray-600 mb-4">
+            Ume is currently in final development. Sign up to be the first to know when we launch!
+          </p>
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </Modal>
     </section>
   );
 };

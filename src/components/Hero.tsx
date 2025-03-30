@@ -1,8 +1,10 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Modal from './Modal';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   useEffect(() => {
     const hero = heroRef.current;
@@ -31,16 +33,6 @@ const Hero: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
   
   return (
     <section 
@@ -76,14 +68,41 @@ const Hero: React.FC = () => {
               </li>
             </ul>
             
-            {/* Headline */}
+            {/* Headline - Updated as requested */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-              Ume Translator: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">The Only App That Decodes Texts AND Flirts for You</span>
+              Ume Translator: <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">Fixes That Mess</span>
             </h1>
             
-            {/* Solution */}
+            {/* New subheadline */}
+            <p className="text-xl text-gray-700 animate-fade-in-delayed">
+              The Only App That Decodes Texts AND Flirts for You!
+            </p>
+            
+            {/* Statistics section */}
+            <div className="bg-white/70 p-5 rounded-xl shadow-sm border border-gray-100 animate-fade-in-delayed">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-ume-purple">51% / 49%</span>
+                  <p className="text-gray-600 text-sm">guys vs gals misinterpret texts daily</p>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-ume-pink">80%</span>
+                  <p className="text-gray-600 text-sm">of relationships hinge on texting</p>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-ume-yellow">68%</span>
+                  <p className="text-gray-600 text-sm">of texters misread 'LOL'</p>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-ume-purple">53%</span>
+                  <p className="text-gray-600 text-sm">overthink 'What's up?'</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* And we can all do better */}
             <p className="text-xl text-gray-600 animate-fade-in-delayed">
-              And we can all do better:
+              And we can all do better with text:
             </p>
             
             <ul className="text-gray-600 text-lg space-y-2 animate-fade-in-delayed">
@@ -101,11 +120,6 @@ const Hero: React.FC = () => {
               </li>
             </ul>
             
-            {/* Data to support pain */}
-            <p className="text-gray-600 text-base animate-fade-in-delayed">
-              Pew Research: 51% of guys and 49% of gals misinterpret texts daily. Sound familiar? Texting matters—80% of relationships hinge on it. Ume bridges the women-vs-men texting gap.
-            </p>
-            
             {/* Clarify Who/What/Why */}
             <div className="bg-gray-50 p-4 rounded-lg animate-fade-in-delayed">
               <p className="text-gray-700">
@@ -118,17 +132,21 @@ const Hero: React.FC = () => {
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delayed">
               <button 
-                onClick={() => {
-                  scrollToSection('cta');
-                  // If we had PostHog tracking, we'd add it here
-                  // posthog.capture('download_clicked');
-                }}
+                onClick={() => setIsModalOpen(true)}
                 className="px-8 py-4 bg-ume-purple hover:bg-ume-purple/90 text-white rounded-full font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ume-purple/50 shadow-lg"
               >
                 Try it Free – Decode Your Texts Now
               </button>
               <button 
-                onClick={() => scrollToSection('features')}
+                onClick={() => {
+                  const element = document.getElementById('features');
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop - 80,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
                 className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-all border border-gray-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-200"
               >
                 Learn More
@@ -136,6 +154,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
+          {/* Right side - Try Ume Live component */}
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">
               {/* Phone mockup */}
@@ -193,6 +212,33 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal for "Try it Free" button */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🚀</span>
+          </div>
+          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+          <p className="text-gray-600 mb-4">
+            Ume is currently in final development. Sign up to be the first to know when we launch!
+          </p>
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-ume-purple text-white py-3 rounded-lg hover:bg-ume-purple/90 transition-colors"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </Modal>
     </section>
   );
 };
