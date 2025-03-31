@@ -120,7 +120,7 @@ const TextingProblemsPage = () => {
               {problemMessages.map((message, index) => (
                 <div key={message.id} className="min-w-full px-4">
                   <div className="glass-card p-6 border-2 border-transparent hover:border-gray-200 transition-all duration-300 h-48 flex flex-col">
-                    <p className="text-base text-pretty text-slate-900 text-gray-700 flex-grow flex items-center justify-center text-center">
+                    <p className="text-base text-pretty text-gray-700 flex-grow flex items-center justify-center text-center">
                       {message.text}
                     </p>
                   </div>

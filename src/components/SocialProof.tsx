@@ -7,11 +7,12 @@ const SocialProof: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
-              Thousands Are Decoding Their Way to Love Goals
+              Did you ever get lost over the texts?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join the text revolution that's changing how we communicate in
-              relationships.
+              We're Here to Save Your Nerves system and Your Love Life! Your
+              personal translator turns relationship confusion into clarity,
+              laughter, and a dash of sass.
             </p>
           </div>
 

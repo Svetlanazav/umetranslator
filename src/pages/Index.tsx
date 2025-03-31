@@ -14,6 +14,7 @@ import FeedbackSection from "@/components/FeedbackSection";
 import Testimonials from "@/components/Testimonials";
 import FeatureHighlights from "@/components/FeatureHighlights";
 import TextingProblemsPage from "@/components/TextingProblemsPage";
+import MessageExamples from "@/components/MessageExamples";
 
 const Index: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Index: React.FC = () => {
       <Hero />
       <SocialProof />
       {/* <TextingProblemsPage /> */}
-
+      <MessageExamples />
       <Features />
 
       {/* <CaseStudy /> */}
