@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface MessageProps {
@@ -58,7 +59,7 @@ const MessageExamples: React.FC = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Overthinking every text, driving your friends crazy with 'Why did
-              he say that?' and debating if 'What’s up?' is flirty or just
+              he say that?' and debating if 'What's up?' is flirty or just
               friendly? And then, the real struggle: how to respond without
               overanalyzing.
             </p>
@@ -66,21 +67,21 @@ const MessageExamples: React.FC = () => {
 
           {/* First message - text left, gif right */}
           <MessageWithGif
-            message="Your crush says ‘We should hang out’—date or dodge? Cue the overthinking spiral."
-            gifUrl="public/Wtf GIF.gif"
+            message="Your crush says 'We should hang out'—date or dodge? Cue the overthinking spiral."
+            gifUrl="/Wtf GIF.gif"
           />
 
           {/* Second message - reversed (gif left, text right) */}
           <MessageWithGif
             message="We need to talk..."
-            gifUrl="public/gif2.gif"
+            gifUrl="/gif2.gif"
             reversed={true}
           />
 
           {/* Third message - text left, gif right */}
           <MessageWithGif
-            message="They hit you with ‘Busy week, ttyl’—genuine or a slow fade? You’re stalking their ‘last seen’ already."
-            gifUrl="public/gif4.gif"
+            message="They hit you with 'Busy week, ttyl'—genuine or a slow fade? You're stalking their 'last seen' already."
+            gifUrl="/gif4.gif"
           />
         </div>
       </div>
