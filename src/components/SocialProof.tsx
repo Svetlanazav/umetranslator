@@ -1,4 +1,5 @@
-import React from "react";
+
+import React from 'react';
 
 const SocialProof: React.FC = () => {
   return (
@@ -13,35 +14,28 @@ const SocialProof: React.FC = () => {
               Thousands Are Decoding Their Way to Love Goals
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join the text revolution that's changing how we communicate in
-              relationships.
+              Join the text revolution that's changing how we communicate in relationships.
             </p>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             <div className="glass-card p-8 text-center animate-fade-in transition-all hover:shadow-md transform hover:-translate-y-1">
               <div className="text-5xl font-bold bg-gradient-to-r from-ume-purple to-ume-pink text-transparent bg-clip-text mb-4">
                 78%
               </div>
               <p className="text-lg text-gray-600">
-                <span className="font-medium">
-                  of people misinterpret text messages
-                </span>{" "}
-                at least once a week, according to a recent Pew Research study.
+                <span className="font-medium">of people misinterpret text messages</span> at least once a week, according to a recent Pew Research study.
               </p>
               <div className="mt-6 flex justify-center">
                 <div className="h-1 w-20 bg-gradient-to-r from-ume-purple to-ume-pink rounded-full"></div>
               </div>
             </div>
-
-            <div
-              className="glass-card p-8 text-center animate-fade-in transition-all hover:shadow-md transform hover:-translate-y-1"
-              style={{ animationDelay: "150ms" }}
-            >
+            
+            <div className="glass-card p-8 text-center animate-fade-in transition-all hover:shadow-md transform hover:-translate-y-1" style={{ animationDelay: '150ms' }}>
               <div className="w-16 h-16 mx-auto rounded-full overflow-hidden mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
-                  alt="User testimonial"
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" 
+                  alt="User testimonial" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -49,6 +43,20 @@ const SocialProof: React.FC = () => {
                 "Ume turned my 'lol' into a flirty convo. Lifesaver!"
               </p>
               <p className="font-medium text-ume-purple">Jamie, 24</p>
+            </div>
+            
+            <div className="glass-card p-8 text-center animate-fade-in transition-all hover:shadow-md transform hover:-translate-y-1" style={{ animationDelay: '300ms' }}>
+              <div className="w-16 h-16 mx-auto rounded-full overflow-hidden mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" 
+                  alt="User testimonial" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="italic text-gray-600 mb-4">
+                "Finally get what my boyfriend means. 10/10."
+              </p>
+              <p className="font-medium text-ume-pink">Sam, 31</p>
             </div>
           </div>
         </div>
