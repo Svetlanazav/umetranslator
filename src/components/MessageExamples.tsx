@@ -58,9 +58,8 @@ const MessageExamples: React.FC = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Overthinking every text, driving your friends crazy with 'Why did
-              he say that?' and debating if 'What's up?' is flirty or just
-              friendly? And then, the real struggle: how to respond without
-              overanalyzing.
+              he say that?' and analysing if 'What's up?' is flirty or just
+              friendly?
             </p>
           </div>
 
