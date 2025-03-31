@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface MessageProps {
@@ -68,7 +67,7 @@ const MessageExamples: React.FC = () => {
           {/* First message - text left, gif right */}
           <MessageWithGif
             message="Your crush says 'We should hang out'—date or dodge? Cue the overthinking spiral."
-            gifUrl="/Wtf GIF.gif"
+            gifUrl="/gif1.gif"
           />
 
           {/* Second message - reversed (gif left, text right) */}
