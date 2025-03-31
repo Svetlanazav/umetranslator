@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowDown, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -137,8 +138,6 @@ const TextMessageExamples: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Glass effect is applied with Tailwind classes in the Card component */}
     </section>
   );
 };

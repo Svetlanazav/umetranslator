@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -29,22 +30,22 @@ const BlogPreview: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-ume-purple/5">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-ume-purple/5">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 md:mb-12">
             <div className="inline-block bg-ume-purple/10 text-ume-purple px-4 py-1 rounded-full text-sm font-medium">
               Blog
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4 md:mb-6">
               Latest From Our Blog
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Insights, tips, and stories about modern text communication.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {blogPosts.map((post, index) => (
               <Link
                 to={`/blog/${post.id}`}
@@ -57,9 +58,13 @@ const BlogPreview: React.FC = () => {
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        // Fallback image if the specified image fails to load
+                        (e.target as HTMLImageElement).src = "/placeholder.svg";
+                      }}
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-5 md:p-6">
                     <div className="text-sm text-gray-500 mb-2">
                       {post.date}
                     </div>
@@ -90,7 +95,7 @@ const BlogPreview: React.FC = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-10 md:mt-12">
             <Link
               to="/blog"
               className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-ume-purple rounded-full font-medium transition-all border border-gray-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-200"

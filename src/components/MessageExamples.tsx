@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface MessageProps {
@@ -39,7 +40,6 @@ const MessageWithGif: React.FC<MessageProps> = ({
             alt="Emotional reaction GIF"
             className="w-full h-64 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ const MessageExamples: React.FC = () => {
 
           {/* Second message - reversed (gif left, text right) */}
           <MessageWithGif
-            message="You're staring at ‘We need to talk?’—is it a trap, a cry, or a flex? Spoiler: The anxiety rising."
+            message="You're staring at 'We need to talk?'—is it a trap, a cry, or a flex? Spoiler: The anxiety rising."
             gifUrl="/gif2.gif"
             reversed={true}
           />
