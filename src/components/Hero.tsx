@@ -84,8 +84,6 @@ const Hero: React.FC = () => {
                 </span>
               </div>
             </div>
-            {/* Info Section */}
-            {/* <HeroInfo /> */}
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delayed">
               <button
@@ -110,8 +108,6 @@ const Hero: React.FC = () => {
               </button>
             </div>
           </div>
-          {/* Stats Section */}
-          {/* <StatsSection /> */}
           {/* Right side - Try Ume Live component */}
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">

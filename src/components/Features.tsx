@@ -56,11 +56,12 @@ const Features: React.FC = () => {
   return (
     <section
       id="features"
-      className="py-20 bg-gradient-to-r from-ume-purple/5 to-ume-pink/5 relative"
+      className="py-20 bg-gradient-to-r from-ume-yellow/3 to-ume-pink/5 relative"
     >
       {/* Background gradient elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-ume-pink/20 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-ume-purple/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-ume-purple/20 rounded-full blur-3xl parallax-element"></div>
+      <div className="absolute top-40 -right-20 w-80 h-80 bg-ume-pink/20 rounded-full blur-3xl parallax-element"></div>
+      <div className="absolute bottom-20 left-40 w-60 h-60 bg-ume-yellow/20 rounded-full blur-3xl parallax-element"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
@@ -106,7 +107,7 @@ const Features: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/60 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
           <div className="md:w-1/4 flex justify-center">
             <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
               <img
@@ -118,11 +119,11 @@ const Features: React.FC = () => {
           </div>
           <div className="md:w-3/4">
             <div className="text-xl italic text-gray-700 mb-4">
-              "It all started with a chat so cringe it hurt— so I built this app
-              to turn texts into clear, clever, and a bit flirty gold!"
+              "It all started with a chat so cringe it hurt — so I built this
+              app to turn texts into clear, clever, and a bit flirty gold!"
             </div>
             <p className="text-ume-purple font-semibold">
-              – Founder, the sassy voice behind Ume
+              – Founder. The Sassy voice behind Ume
             </p>
 
             <button

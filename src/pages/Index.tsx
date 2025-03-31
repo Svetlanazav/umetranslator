@@ -13,14 +13,18 @@ import CaseStudy from "@/components/CaseStudy";
 import FeedbackSection from "@/components/FeedbackSection";
 import Testimonials from "@/components/Testimonials";
 import FeatureHighlights from "@/components/FeatureHighlights";
+import TextingProblemsPage from "@/components/TextingProblemsPage";
 
 const Index: React.FC = () => {
   return (
     <Layout>
       <Hero />
-      <Features />
       <SocialProof />
-      <CaseStudy />
+      {/* <TextingProblemsPage /> */}
+
+      <Features />
+
+      {/* <CaseStudy /> */}
       <PersonaSection />
       <ExampleSection />
 
