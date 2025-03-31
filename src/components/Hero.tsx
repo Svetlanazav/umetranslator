@@ -38,14 +38,14 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="min-h-screen pt-20 flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen pt-10 flex items-center justify-center relative overflow-hidden"
     >
       {/* Decorative blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-ume-purple/20 rounded-full blur-3xl parallax-element"></div>
       <div className="absolute top-40 -right-20 w-80 h-80 bg-ume-pink/20 rounded-full blur-3xl parallax-element"></div>
       <div className="absolute bottom-20 left-40 w-60 h-60 bg-ume-yellow/20 rounded-full blur-3xl parallax-element"></div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 space-y-6 max-w-xl">
             {/* Pain Points (simplified) */}
