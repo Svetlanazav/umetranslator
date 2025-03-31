@@ -39,6 +39,10 @@ const MessageWithGif: React.FC<MessageProps> = ({
             src={gifUrl}
             alt="Emotional reaction GIF"
             className="w-full h-64 object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/placeholder.svg";
+            }}
           />
         </div>
       </div>
