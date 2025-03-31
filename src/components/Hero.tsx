@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "./Modal";
 import StatsSection from "./StatsSection";
@@ -60,32 +59,28 @@ const Hero: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
               Ume Translator:{" "}
               <span className="bg-gradient-to-r from-ume-purple via-ume-pink to-ume-yellow text-transparent bg-clip-text">
-                Fixes That Mess
+                Decode Texts & Flirt Like a Pro
               </span>
             </h1>
-            
-            <p className="text-lg text-gray-700 animate-fade-in">
-              The Only App That Decodes Texts AND Flirts for You!
-            </p>
 
             {/* Core benefits with icons */}
             <div className="flex flex-wrap gap-y-2 gap-x-6 animate-fade-in-delayed">
               <div className="flex items-center gap-2 animate-fade-in-delayed">
                 <span className="text-ume-purple">💬</span>
                 <span className="text-gray-600">
-                  Decode cryptic replies
+                  Decode cryptic replies with AI that gets it
                 </span>
               </div>
               <div className="flex items-center gap-2 animate-fade-in-delayed">
                 <span className="text-ume-pink">😎</span>
                 <span className="text-gray-600">
-                  Flirt with sass, zero cringe
+                  Flirt like a pro with sass, zero cringe
                 </span>
               </div>
               <div className="flex items-center gap-2 animate-fade-in-delayed">
                 <span className="text-ume-yellow">❤️</span>
                 <span className="text-gray-600">
-                  Understand your partner
+                  Understand your partner—no guesswork needed
                 </span>
               </div>
             </div>

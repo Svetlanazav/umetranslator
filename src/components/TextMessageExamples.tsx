@@ -1,7 +1,7 @@
-
 import React from "react";
 import { ArrowDown, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const TextMessageExamples: React.FC = () => {
   const examples = [
@@ -10,6 +10,7 @@ const TextMessageExamples: React.FC = () => {
       text: "I'm fine",
       decode: {
         manToWoman: "She's not fine—ask 'Wanna talk, babe?'",
+        flirtStyle: undefined,
       },
       emoji: "🧐",
       detailEmoji: "😏",
@@ -22,6 +23,7 @@ const TextMessageExamples: React.FC = () => {
       text: "Busy week, ttyl",
       decode: {
         manToWoman: "He's dodging—try 'Too busy to miss me?'",
+        flirtStyle: undefined,
       },
       emoji: "🐝",
       detailEmoji: "😏",
@@ -32,6 +34,7 @@ const TextMessageExamples: React.FC = () => {
       title: "Make it Flirt",
       text: "Wanna grab coffee sometime",
       decode: {
+        manToWoman: undefined,
         flirtStyle:
           "Flirt Style: 'How about coffee and some steamy eye contact—when's my VIP slot?",
       },
@@ -41,7 +44,7 @@ const TextMessageExamples: React.FC = () => {
       message:
         "Don't just wait - Act on your love life! Make it playful and full of energy.",
     },
-  ];
+  ] as const;
 
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-white to-ume-purple/5 relative overflow-hidden">
@@ -61,80 +64,114 @@ const TextMessageExamples: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {examples.map((example, index) => (
-              <Card
-                key={index}
-                className="bg-white/80 backdrop-blur-md border border-white/30 overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg"
-              >
-                <div
-                  className={`bg-gradient-to-r from-ume-${example.color}/70 to-ume-${example.color}/40 p-3 sm:p-4 mb-4`}
+            {examples.map((example, index) => {
+              return (
+                <Card
+                  key={index}
+                  className="bg-white/80 backdrop-blur-md border border-white/30 overflow-hidden transform transition-all hover:scale-[1.02] shadow-lg"
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">{example.emoji}</span>
-                    <h3 className="font-bold text-lg text-gray-800">
-                      {example.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
-                    <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
-                      <p className="text-gray-700">"{example.text}"</p>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center my-3 sm:my-4">
-                    <ArrowDown
-                      className={`text-ume-${example.color} animate-bounce`}
-                    />
-                  </div>
-
                   <div
-                    className={`bg-ume-${example.color}/10 rounded-xl p-3 sm:p-4 mb-4`}
+                    className={cn({
+                      "bg-gradient-to-r  p-3 sm:p-4 mb-4": true,
+                      "from-ume-purple/60 to-white/30":
+                        example.color === "purple",
+                      "from-ume-yellow/60 to-white/30":
+                        example.color === "yellow",
+                      "from-ume-pink/60 to-white/30": example.color === "pink",
+                    })}
                   >
-                    <div className="text-xs text-gray-500 mb-1">
-                      Ume translates:
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">{example.emoji}</span>
+                      <h3 className="font-bold text-lg text-gray-800">
+                        {example.title}
+                      </h3>
                     </div>
-
-                    {example.decode.manToWoman && (
-                      <div className="mb-2">
-                        <div
-                          className={`font-medium text-ume-${example.color} flex items-start gap-1`}
-                        >
-                          <span>{example.detailEmoji}</span>
-                          <span>"{example.decode.manToWoman}"</span>
-                        </div>
-                      </div>
-                    )}
-
-                    {example.decode.flirtStyle && (
-                      <div>
-                        <div
-                          className={`font-medium text-gray-700 flex items-start gap-1`}
-                        >
-                          <span>{example.detailEmoji}</span>
-                          <span>"{example.decode.flirtStyle}"</span>
-                        </div>
-                      </div>
-                    )}
                   </div>
 
-                  <div className="flex gap-3 items-center mt-4 sm:mt-6">
-                    <div
-                      className={`w-10 h-10 rounded-full bg-ume-${example.color}/20 flex items-center justify-center flex-shrink-0`}
-                    >
-                      <MessageSquare
-                        size={18}
-                        className={`text-ume-${example.color}`}
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="bg-gray-200 w-8 h-8 rounded-full flex-shrink-0"></div>
+                      <div className="bg-gray-200 rounded-2xl p-3 max-w-[90%]">
+                        <p className="text-gray-700">"{example.text}"</p>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center my-3 sm:my-4">
+                      <ArrowDown
+                        className={cn({
+                          "animate-bounce": true,
+                          "text-ume-purple": example.color === "purple",
+                          "text-ume-yellow": example.color === "yellow",
+                          "text-ume-pink": example.color === "pink",
+                        })}
                       />
                     </div>
-                    <p className="text-sm text-gray-600">{example.message}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+
+                    <div
+                      className={cn({
+                        "rounded-xl p-3 sm:p-4 mb-4": true,
+                        "bg-ume-purple/10": example.color === "purple",
+                        "bg-ume-yellow/10": example.color === "yellow",
+                        "bg-ume-pink/10": example.color === "pink",
+                      })}
+                    >
+                      <div className="text-xs text-gray-500 mb-1">
+                        Ume translates:
+                      </div>
+
+                      {example.decode.manToWoman && (
+                        <div className="mb-2">
+                          <div
+                            className={cn({
+                              "font-medium flex items-start gap-1": true,
+                              "text-ume-purple": example.color === "purple",
+                              "text-ume-yellow": example.color === "yellow",
+                              "text-ume-pink": example.color === "pink",
+                            })}
+                          >
+                            <span>{example.detailEmoji}</span>
+                            <span>"{example.decode.manToWoman}"</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {example.decode.flirtStyle && (
+                        <div>
+                          <div
+                            className={`font-medium text-gray-700 flex items-start gap-1`}
+                          >
+                            <span>{example.detailEmoji}</span>
+                            <span>"{example.decode.flirtStyle}"</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex gap-3 items-center mt-4 sm:mt-6">
+                      <div
+                        className={cn({
+                          "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0":
+                            true,
+                          "bg-ume-purple/20": example.color === "purple",
+                          "bg-ume-yellow/20": example.color === "yellow",
+                          "bg-ume-pink/20": example.color === "pink",
+                        })}
+                      >
+                        <MessageSquare
+                          size={18}
+                          className={cn({
+                            "text-ume-purple": example.color === "purple",
+                            "text-ume-yellow": example.color === "yellow",
+                            "text-ume-pink": example.color === "pink",
+                          })}
+                        />
+                      </div>
+                      <p className="text-sm text-gray-600">{example.message}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

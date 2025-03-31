@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface MessageProps {
@@ -57,9 +56,9 @@ const MessageExamples: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block bg-ume-pink/10 text-ume-pink px-4 py-1 rounded-full text-sm font-medium">
-              Let's get real
-            </div>
+            {/* <div className="inline-block bg-ume-pink/10 text-ume-pink px-4 py-1 rounded-full text-sm font-medium">
+              Reality
+            </div> */}
             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
               Let's be honest. We've all been there!
             </h2>
