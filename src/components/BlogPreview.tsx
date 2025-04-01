@@ -6,7 +6,7 @@ const BlogPreview: React.FC = () => {
     {
       id: "what-does-she-mean-by-im-fine",
       title: "5 Ways to Decode 'I'm fine' (When They're Not)",
-      image: "public/imgs/funny-couple.jpeg",
+      image: "/imgs/funny-couple.jpeg",
       excerpt:
         "Learn to read between the lines when your partner says they're 'fine'.",
       date: "Oct 15, 2023",
@@ -14,7 +14,7 @@ const BlogPreview: React.FC = () => {
     {
       id: "how-to-keep-him-interested-texting",
       title: "The Science Behind Text Misinterpretation",
-      image: "public/imgs/writing.jpeg",
+      image: "/imgs/writing.jpeg",
       excerpt:
         "Why we misunderstand texts and how to avoid communication pitfalls.",
       date: "Sep 28, 2023",
@@ -22,7 +22,7 @@ const BlogPreview: React.FC = () => {
     {
       id: "how-to-flirt-over-text",
       title: "Flirty Texts That Actually Work",
-      image: "public/imgs/funnyguy.jpeg",
+      image: "/imgs/funnyguy.jpeg",
       excerpt: "Skip the cheesy lines and try these proven approaches instead.",
       date: "Sep 15, 2023",
     },

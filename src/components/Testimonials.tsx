@@ -10,7 +10,7 @@ const Testimonials: React.FC = () => {
         "Ume turned my 'lol' into a flirty convo that lasted for hours. Total game changer!",
       name: "Jamie, 29",
       title: "Dating App User",
-      image: "public/imgs/Ivan.jpg",
+      image: "/imgs/Ivan.jpg",
       color: "purple",
     },
     {
@@ -18,7 +18,7 @@ const Testimonials: React.FC = () => {
         "Finally understand my girlfriend's texts. No more sleeping on the couch because of misinterpreted messages!",
       name: "Sam, 31",
       title: "Relationship Saver",
-      image: "public/imgs/sam31.jpeg",
+      image: "/imgs/sam31.jpeg",
       color: "pink",
     },
     {
@@ -26,7 +26,7 @@ const Testimonials: React.FC = () => {
         "We don't get into fight anymore. But the fire between us is rising over and over thanks to this app!",
       name: "Sara, 27",
       title: "We have so much love now",
-      image: "public/imgs/author1.jpg",
+      image: "/imgs/author1.jpg",
       color: "purple",
     },
     {
@@ -34,7 +34,7 @@ const Testimonials: React.FC = () => {
         "Twitter's buzzing about Ume—@flirtguru says it's the future of relationship communication!",
       name: "@maryEll,",
       title: "Twitter",
-      image: "public/imgs/sara1.jpg",
+      image: "/imgs/sara1.jpg",
       color: "yellow",
     },
   ];

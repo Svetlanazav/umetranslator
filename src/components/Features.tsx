@@ -114,7 +114,7 @@ const Features: React.FC = () => {
           <div className="md:w-1/4 flex justify-center">
             <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
               <img
-                src="public/imgs/ceo.jpg"
+                src="/imgs/ceo.jpg"
                 alt="Founder"
                 className="w-full h-full object-cover"
               />

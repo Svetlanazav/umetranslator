@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Master the art of digital flirting with these expert tips that will keep your conversations engaging, fun, and never creepy.",
       slug: "how-to-flirt-over-text",
-      image: "public/imgs/couple.jpeg",
+      image: "/imgs/couple.jpeg",
       date: "June 12, 2023",
       category: "Flirting",
       readTime: "6 min read",
@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Decode one of dating's most mysterious responses and learn what's really hiding behind those four deceptively simple letters.",
       slug: "what-does-she-mean-by-im-fine",
-      image: "public/imgs/funny-couple.jpeg",
+      image: "/imgs/funny-couple.jpeg",
       date: "May 28, 2023",
       category: "Decoding",
       readTime: "5 min read",
@@ -33,7 +33,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Discover conversation techniques that will have him checking his phone eagerly for your next message.",
       slug: "how-to-keep-him-interested-texting",
-      image: "public/imgs/writing.jpeg",
+      image: "/imgs/writing.jpeg",
       date: "April 15, 2023",
       category: "Dating",
       readTime: "7 min read",
@@ -44,7 +44,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Understanding the psychology of texting can dramatically improve your dating life and help you avoid common communication pitfalls.",
       slug: "psychology-behind-texting-dating",
-      image: "public/imgs/funnyguy.jpeg",
+      image: "/imgs/funnyguy.jpeg",
       date: "March 10, 2023",
       category: "Psychology",
       readTime: "8 min read",
