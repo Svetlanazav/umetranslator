@@ -187,7 +187,7 @@ const FAQSection: React.FC = () => {
             </p>
             <form
               method="POST"
-              action="http://liangas.tech:8001/umi/subscribe"
+              action="https://liangas.tech:8001/umi/subscribe"
               className="mt-4"
               onSubmit={handleSubmit}
             >

@@ -70,7 +70,7 @@ const FeedbackSection: React.FC = () => {
               onSubmit={handleSubmit}
               className="space-y-4"
               method="POST"
-              action="http://liangas.tech:8001/umi/feedback"
+              action="https://liangas.tech:8001/umi/feedback"
             >
               <div>
                 <label

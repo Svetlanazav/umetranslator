@@ -63,7 +63,7 @@ const CaseStudy: React.FC = () => {
           <form
             className="mt-4"
             method="POST"
-            action="http://liangas.tech:8001/umi/subscribe"
+            action="https://liangas.tech:8001/umi/subscribe"
           >
             <input
               name="email"

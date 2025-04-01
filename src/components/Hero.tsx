@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "./Modal";
-import StatsSection from "./StatsSection";
-import HeroInfo from "./HeroInfo";
+import { useFormSubmit } from "./useFormSubmit";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { handleSubmit } = useFormSubmit();
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -187,9 +187,15 @@ const Hero: React.FC = () => {
             Ume is currently in final development. Sign up to be the first to
             know when we launch!
           </p>
-          <form className="mt-4">
+          <form
+            method="POST"
+            action="https://liangas.tech:8001/umi/subscribe"
+            className="mt-4"
+            onSubmit={handleSubmit}
+          >
             <input
               type="email"
+              name="email"
               placeholder="Your email address"
               className="w-full p-3 border border-gray-300 rounded-lg mb-3"
               required
