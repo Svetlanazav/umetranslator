@@ -47,7 +47,10 @@ const TextMessageExamples: React.FC = () => {
   ] as const;
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-white to-ume-purple/5 relative overflow-hidden">
+    <section
+      id="real-examples"
+      className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-white to-ume-purple/5 relative overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">

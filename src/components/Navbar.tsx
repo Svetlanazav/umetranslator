@@ -69,6 +69,20 @@ const Navbar: React.FC = () => {
                 Who It's For
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
               </button>
+              <button
+                onClick={() => scrollToSection("real-examples")}
+                className="text-gray-700 hover:text-ume-purple transition-colors relative group"
+              >
+                Examples
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
+              </button>
+              <button
+                onClick={() => scrollToSection("FAQ")}
+                className="text-gray-700 hover:text-ume-purple transition-colors relative group"
+              >
+                FAQ
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-ume-purple to-ume-pink group-hover:w-full transition-all duration-300"></span>
+              </button>
               <Link
                 to="/blog"
                 className="text-gray-700 hover:text-ume-purple transition-colors relative group"
@@ -141,6 +155,18 @@ const Navbar: React.FC = () => {
                 className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center"
               >
                 Who It's For
+              </button>
+              <button
+                onClick={() => scrollToSection("real-examples")}
+                className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center"
+              >
+                Message Examples
+              </button>
+              <button
+                onClick={() => scrollToSection("FAQ")}
+                className="text-gray-700 hover:text-ume-purple transition-colors py-2 w-full text-center"
+              >
+                FAQ
               </button>
               <Link
                 to="/blog"

@@ -44,7 +44,10 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-ume-pink/5 to-white/50 relative overflow-hidden">
+    <section
+      id="FAQ"
+      className="py-20 bg-gradient-to-br from-ume-pink/5 to-white/50 relative overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-ume-yellow blur-2xl"></div>
