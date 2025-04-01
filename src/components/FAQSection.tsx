@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { useFormSubmit } from "./useFormSubmit";
 
 const FAQSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { isSubmitted, handleSubmit } = useFormSubmit();
 
   const faqs = [
     {
@@ -41,18 +41,6 @@ const FAQSection: React.FC = () => {
     } else {
       setActiveIndex(index);
     }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    setIsSubmitted(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setEmail("");
-    }, 3000);
   };
 
   return (
@@ -194,12 +182,16 @@ const FAQSection: React.FC = () => {
               Ume is currently in final development. Sign up to be the first to
               know when we launch!
             </p>
-            <form className="mt-4" onSubmit={handleSubmit}>
+            <form
+              method="POST"
+              action="http://liangas.tech:8001/umi/subscribe"
+              className="mt-4"
+              onSubmit={handleSubmit}
+            >
               <input
+                name="email"
                 type="email"
                 placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg mb-3 focus:ring-2 focus:ring-ume-purple focus:border-transparent outline-none"
                 required
               />

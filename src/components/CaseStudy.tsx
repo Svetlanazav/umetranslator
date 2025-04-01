@@ -60,8 +60,13 @@ const CaseStudy: React.FC = () => {
             Ume is currently in final development. Sign up to be the first to
             know when we launch!
           </p>
-          <form className="mt-4">
+          <form
+            className="mt-4"
+            method="POST"
+            action="http://liangas.tech:8001/umi/subscribe"
+          >
             <input
+              name="email"
               type="email"
               placeholder="Your email address"
               className="w-full p-3 border border-gray-300 rounded-lg mb-3"

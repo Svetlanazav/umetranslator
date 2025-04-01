@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Sparkles, MessageSquare, Brain, AlertTriangle } from "lucide-react";
 import Modal from "./Modal";
+import { useFormSubmit } from "./useFormSubmit";
+import { Ok } from "./Ok";
 
 const Features: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  const { isSubmitted, handleSubmit } = useFormSubmit();
 
   const features = [
     {
@@ -111,7 +114,7 @@ const Features: React.FC = () => {
           <div className="md:w-1/4 flex justify-center">
             <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+                src="public/imgs/ceo.jpg"
                 alt="Founder"
                 className="w-full h-full object-cover"
               />
@@ -137,31 +140,44 @@ const Features: React.FC = () => {
       </div>
 
       {/* Modal for CTA button */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="text-center py-6">
-          <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl">🚀</span>
-          </div>
-          <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
-          <p className="text-gray-600 mb-4">
-            Ume is currently in final development. Sign up to be the first to
-            know when we launch!
-          </p>
-          <form className="mt-4">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="w-full p-3 border border-gray-300 rounded-lg mb-3"
-              required
-            />
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => !isSubmitted && setIsModalOpen(false)}
+      >
+        {isSubmitted ? (
+          <Ok />
+        ) : (
+          <div className="text-center py-6">
+            <div className="w-16 h-16 bg-ume-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🚀</span>
+            </div>
+            <h3 className="text-xl font-bold mb-2">We're Launching Soon!</h3>
+            <p className="text-gray-600 mb-4">
+              Ume is currently in final development. Sign up to be the first to
+              know when we launch!
+            </p>
+            <form
+              method="POST"
+              action="http://liangas.tech:8001/umi/subscribe"
+              className="mt-4"
+              onSubmit={handleSubmit}
             >
-              Notify Me
-            </button>
-          </form>
-        </div>
+              <input
+                name="email"
+                type="email"
+                placeholder="Your email address"
+                className="w-full p-3 border border-gray-300 rounded-lg mb-3"
+                required
+              />
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-ume-purple to-ume-pink text-white py-3 rounded-lg hover:shadow-md transition-all"
+              >
+                Notify Me
+              </button>
+            </form>
+          </div>
+        )}
       </Modal>
     </section>
   );

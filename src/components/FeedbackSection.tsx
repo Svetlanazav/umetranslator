@@ -5,15 +5,18 @@ const FeedbackSection: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Feedback submitted:", feedback);
     setIsSubmitted(true);
+    const formElement = e.currentTarget;
+    fetch(formElement.action!, {
+      method: formElement.method!,
+      body: new FormData(formElement),
+    }).catch((e) => console.error(e));
 
     // Reset after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
-      setFeedback("");
     }, 3000);
   };
 
@@ -63,7 +66,12 @@ const FeedbackSection: React.FC = () => {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              method="POST"
+              action="http://liangas.tech:8001/umi/feedback"
+            >
               <div>
                 <label
                   htmlFor="feedback"
@@ -72,6 +80,7 @@ const FeedbackSection: React.FC = () => {
                   Your Feedback
                 </label>
                 <textarea
+                  name="feedback"
                   id="feedback"
                   rows={4}
                   value={feedback}

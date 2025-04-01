@@ -72,7 +72,7 @@ const FeatureHighlights: React.FC = () => {
           <div className="md:w-1/4 flex justify-center">
             <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+                src="https://res.cloudinary.com/dfmrqohp8/image/upload/v1743458235/ceo_pqvwoj.jpg"
                 alt="Founder"
                 className="w-full h-full object-cover"
               />

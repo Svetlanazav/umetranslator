@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { useFormSubmit } from "./useFormSubmit";
+import { Ok } from "./Ok";
 
 const CTA: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    setIsSubmitted(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setEmail("");
-      setIsModalOpen(false);
-    }, 3000);
-  };
+  const { isSubmitted, handleSubmit } = useFormSubmit();
 
   return (
     <section id="cta" className="py-8 md:py-12 relative overflow-hidden">
@@ -70,31 +58,7 @@ const CTA: React.FC = () => {
         onClose={() => !isSubmitted && setIsModalOpen(false)}
       >
         {isSubmitted ? (
-          <div className="text-center py-4 sm:py-6">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 sm:h-7 sm:w-7 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <h4 className="text-lg sm:text-xl font-medium text-gray-800 mb-2">
-              Thank You!
-            </h4>
-            <p className="text-sm sm:text-base text-gray-600">
-              We'll notify you when Ume launches. Get ready to transform your
-              texting game!
-            </p>
-          </div>
+          <Ok />
         ) : (
           <>
             <p className="text-sm sm:text-base text-gray-600 mb-4">
@@ -102,7 +66,12 @@ const CTA: React.FC = () => {
               early access!
             </p>
 
-            <form onSubmit={handleSubmit}>
+            <form
+              method="POST"
+              action="http://liangas.tech:8001/umi/subscribe"
+              className="mt-4"
+              onSubmit={handleSubmit}
+            >
               <div className="mb-4">
                 <label
                   htmlFor="email"
@@ -111,10 +80,9 @@ const CTA: React.FC = () => {
                   Email Address
                 </label>
                 <input
+                  name="email"
                   id="email"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
                   className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ume-purple focus:border-transparent outline-none transition-all"

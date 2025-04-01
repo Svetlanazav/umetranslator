@@ -2,13 +2,13 @@ import React from "react";
 
 interface MessageProps {
   message: string;
-  gifUrl: string;
+  src: string;
   reversed?: boolean;
 }
 
 const MessageWithGif: React.FC<MessageProps> = ({
   message,
-  gifUrl,
+  src,
   reversed = false,
 }) => {
   return (
@@ -35,7 +35,7 @@ const MessageWithGif: React.FC<MessageProps> = ({
           }`}
         >
           <img
-            src={gifUrl}
+            src={src}
             alt="Emotional reaction GIF"
             className="w-full h-64 object-cover"
             onError={(e) => {
@@ -72,20 +72,20 @@ const MessageExamples: React.FC = () => {
           {/* First message - text left, gif right */}
           <MessageWithGif
             message="Your crush says 'We should hang out'—date or dodge? Cue the overthinking spiral."
-            gifUrl="/gif1.gif"
+            src="/MessageExamples/gif1.gif"
           />
 
           {/* Second message - reversed (gif left, text right) */}
           <MessageWithGif
             message="You're staring at 'We need to talk?'—is it a trap, a cry, or a flex? Spoiler: The anxiety rising."
-            gifUrl="/gif2.gif"
+            src="/MessageExamples/gif2.gif"
             reversed={true}
           />
 
           {/* Third message - text left, gif right */}
           <MessageWithGif
             message="They hit you with 'Busy week, ttyl'—genuine or a slow fade? You're stalking their 'last seen' already."
-            gifUrl="/gif4.gif"
+            src="/MessageExamples/gif4.gif"
           />
         </div>
       </div>

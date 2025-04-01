@@ -1,29 +1,28 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 const BlogPreview: React.FC = () => {
   const blogPosts = [
     {
-      id: 1,
+      id: "what-does-she-mean-by-im-fine",
       title: "5 Ways to Decode 'I'm fine' (When They're Not)",
-      image: "/blog-fine.webp",
+      image: "public/imgs/funny-couple.jpeg",
       excerpt:
         "Learn to read between the lines when your partner says they're 'fine'.",
       date: "Oct 15, 2023",
     },
     {
-      id: 2,
+      id: "how-to-keep-him-interested-texting",
       title: "The Science Behind Text Misinterpretation",
-      image: "/blog-texting.webp",
+      image: "public/imgs/writing.jpeg",
       excerpt:
         "Why we misunderstand texts and how to avoid communication pitfalls.",
       date: "Sep 28, 2023",
     },
     {
-      id: 3,
+      id: "how-to-flirt-over-text",
       title: "Flirty Texts That Actually Work",
-      image: "/blog-flirt.webp",
+      image: "public/imgs/funnyguy.jpeg",
       excerpt: "Skip the cheesy lines and try these proven approaches instead.",
       date: "Sep 15, 2023",
     },
