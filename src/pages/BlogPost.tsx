@@ -6,7 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 import { asset, withBaseAssets } from "@/lib/asset";
 
 // Blog post data
-const blogPostsData = {
+export const blogPostsData = {
   "how-to-flirt-over-text": {
     title: "How to Flirt Over Text Without Being Awkward",
     date: "June 12, 2023",
