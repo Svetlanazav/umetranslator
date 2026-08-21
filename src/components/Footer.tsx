@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { useSectionNav } from "@/lib/useSectionNav";
 
 const Footer: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const goToSection = useSectionNav();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -79,6 +81,10 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#features"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    goToSection("features");
+                  }}
                   className="text-gray-600 hover:text-ume-purple transition-colors"
                 >
                   Features
@@ -87,6 +93,10 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#who-its-for"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    goToSection("who-its-for");
+                  }}
                   className="text-gray-600 hover:text-ume-purple transition-colors"
                 >
                   Who It's For

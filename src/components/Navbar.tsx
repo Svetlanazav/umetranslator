@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { useSectionNav } from "@/lib/useSectionNav";
 import Modal from "./Modal";
 import { useFormSubmit } from "./useFormSubmit";
 import { Ok } from "./Ok";
@@ -10,6 +11,7 @@ const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { isSubmitted, handleSubmit } = useFormSubmit();
+  const goToSection = useSectionNav();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,19 +23,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    // If we're on the homepage, scroll to the section
-    if (window.location.pathname === "/") {
-      const element = document.getElementById(id);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: "smooth",
-        });
-      }
-    } else {
-      // If we're on another page, navigate to homepage with hash
-      window.location.href = `/#${id}`;
-    }
+    goToSection(id);
     setMobileMenuOpen(false);
   };
 
