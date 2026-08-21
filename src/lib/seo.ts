@@ -28,8 +28,10 @@ function leadParagraph(content: string): string {
   return match[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 }
 
+// GitHub Pages serves these routes as directories and 301s the
+// slashless form, so the canonical URL is the one with the trailing slash.
 export function canonicalUrl(pathname: string): string {
-  return `${SITE_URL}${pathname === "/" ? "/" : pathname}`;
+  return `${SITE_URL}${pathname.replace(/\/*$/, "")}/`;
 }
 
 export function getMeta(pathname: string): PageMeta {
