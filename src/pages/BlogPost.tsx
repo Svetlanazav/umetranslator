@@ -13,7 +13,7 @@ const blogPostsData = {
     author: "Alex Morgan",
     category: "Flirting",
     readTime: "6 min read",
-    featuredImage: "/blog/blog-flirt.webp",
+    featuredImage: "/blog-imgs/blog-flirt.webp",
     content: `
       <p class="lead">Mastering the art of texting can significantly improve your dating life. In this article, we explore effective and non-awkward ways to flirt over text.</p>
       
@@ -22,7 +22,7 @@ const blogPostsData = {
       
       <p>Research suggests that over 70% of communication in new relationships now happens digitally, highlighting just how important your texting skills have become.</p>
       
-      <img src="/blog/blog-texting.webp" alt="Person texting on a smartphone" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-texting.webp" alt="Person texting on a smartphone" class="my-8 rounded-lg w-full" />
       
       <h2>The Do's of Flirty Texting</h2>
       
@@ -50,7 +50,7 @@ const blogPostsData = {
       <h3>3. Skip the Generic Pickup Lines</h3>
       <p>Clichéd pickup lines rarely work in person, and they're even less effective over text. Focus on creating a genuine connection instead.</p>
       
-      <img src="/blog/blog-couple.webp" alt="Happy couple looking at smartphone together" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-couple.webp" alt="Happy couple looking at smartphone together" class="my-8 rounded-lg w-full" />
       
       <h2>Examples That Actually Work</h2>
       
@@ -87,7 +87,7 @@ const blogPostsData = {
     author: "Jamie Chen",
     category: "Decoding",
     readTime: "5 min read",
-    featuredImage: "/blog/blog-fine.webp",
+    featuredImage: "/blog-imgs/blog-fine.webp",
     content: `
       <p class="lead">Those four letters – F-I-N-E – might be the most misinterpreted word in relationship communication. Let's decode what "I'm fine" really means and how to respond appropriately.</p>
       
@@ -100,7 +100,7 @@ const blogPostsData = {
       <h3>2. The "I'm Not Ready to Talk" Fine</h3>
       <p>Often, "I'm fine" means "I'm feeling something, but I'm not ready to discuss it yet." This might be because they're still processing their emotions or because the timing isn't right for a deeper conversation.</p>
       
-      <img src="/blog/blog-thinking.webp" alt="Woman looking thoughtful" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-thinking.webp" alt="Woman looking thoughtful" class="my-8 rounded-lg w-full" />
       
       <h3>3. The "You Should Know Why I'm Upset" Fine</h3>
       <p>This version of "fine" suggests the person believes you already know what's wrong, and they're disappointed you're not acknowledging it. It's often accompanied by closed body language or a change in tone.</p>
@@ -125,7 +125,7 @@ const blogPostsData = {
       <h3>Recent Context</h3>
       <p>Did something potentially upsetting happen recently? Was there a miscommunication or disappointment? "Fine" carries more weight after a conflict or potential relationship misstep.</p>
       
-      <img src="/blog/blog-couple-talking.webp" alt="Couple having a serious conversation" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-couple-talking.webp" alt="Couple having a serious conversation" class="my-8 rounded-lg w-full" />
       
       <h2>How to Respond When She Says "I'm Fine"</h2>
       
@@ -175,7 +175,7 @@ const blogPostsData = {
     author: "Taylor Williams",
     category: "Dating",
     readTime: "7 min read",
-    featuredImage: "/blog/blog-interested.webp",
+    featuredImage: "/blog-imgs/blog-interested.webp",
     content: `
       <p class="lead">Keeping a conversation flowing with someone you're interested in can sometimes feel like a delicate art. This guide will help you master the techniques that keep him checking his phone for your messages.</p>
       
@@ -191,7 +191,7 @@ const blogPostsData = {
       
       <p>Understanding these tendencies can help you adapt your messaging style for better engagement – though remember that individual preferences always matter more than generalizations.</p>
       
-      <img src="/blog/blog-phone.webp" alt="Person holding smartphone" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-phone.webp" alt="Person holding smartphone" class="my-8 rounded-lg w-full" />
       
       <h2>The Art of Intriguing Messages</h2>
       
@@ -221,7 +221,7 @@ const blogPostsData = {
       <h3>Leaving Space</h3>
       <p>Constant availability can paradoxically reduce interest. Having gaps between texting sessions gives both of you time to miss the conversation and build anticipation.</p>
       
-      <img src="/blog/blog-happy.webp" alt="Person smiling at phone message" class="my-8 rounded-lg w-full" />
+      <img src="/blog-imgs/blog-happy.webp" alt="Person smiling at phone message" class="my-8 rounded-lg w-full" />
       
       <h2>Creating Depth Beyond Small Talk</h2>
       

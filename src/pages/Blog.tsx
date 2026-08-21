@@ -56,7 +56,7 @@ const Blog: React.FC = () => {
       excerpt:
         "A collection of foolproof text responses for any dating situation, from first conversations to relationship milestones.",
       slug: "text-responses-that-work",
-      image: "/blog/blog-fine.webp",
+      image: "/blog-imgs/blog-fine.webp",
       date: "February 22, 2023",
       category: "Tips",
       readTime: "4 min read",
@@ -67,7 +67,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Learn to identify concerning patterns in text communication before they become bigger issues in your relationship.",
       slug: "red-flags-in-texting",
-      image: "/blog/blog-interested.webp",
+      image: "/blog-imgs/blog-interested.webp",
       date: "January 18, 2023",
       category: "Relationships",
       readTime: "6 min read",
