@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 const Blog: React.FC = () => {
   const blogPosts = [
@@ -55,7 +56,7 @@ const Blog: React.FC = () => {
       excerpt:
         "A collection of foolproof text responses for any dating situation, from first conversations to relationship milestones.",
       slug: "text-responses-that-work",
-      image: "/blog-fine.webp",
+      image: "/blog/blog-fine.webp",
       date: "February 22, 2023",
       category: "Tips",
       readTime: "4 min read",
@@ -66,7 +67,7 @@ const Blog: React.FC = () => {
       excerpt:
         "Learn to identify concerning patterns in text communication before they become bigger issues in your relationship.",
       slug: "red-flags-in-texting",
-      image: "/blog-interested.webp",
+      image: "/blog/blog-interested.webp",
       date: "January 18, 2023",
       category: "Relationships",
       readTime: "6 min read",
@@ -97,7 +98,7 @@ const Blog: React.FC = () => {
                   <Link to={`/blog/${post.slug}`} className="block">
                     <div className="relative aspect-video overflow-hidden">
                       <img
-                        src={post.image}
+                        src={asset(post.image)}
                         alt={`Illustration for ${post.title}`}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { asset } from "@/lib/asset";
 
 const BlogPreview: React.FC = () => {
   const blogPosts = [
@@ -54,12 +55,12 @@ const BlogPreview: React.FC = () => {
                 <div className="glass-card overflow-hidden rounded-xl transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-md h-full">
                   <div className="relative overflow-hidden aspect-video">
                     <img
-                      src={post.image}
+                      src={asset(post.image)}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
                         // Fallback image if the specified image fails to load
-                        (e.target as HTMLImageElement).src = "/placeholder.svg";
+                        (e.target as HTMLImageElement).src = asset("/placeholder.svg");
                       }}
                     />
                   </div>

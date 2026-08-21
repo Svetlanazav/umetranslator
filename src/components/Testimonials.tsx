@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 const Testimonials: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -78,7 +79,7 @@ const Testimonials: React.FC = () => {
               <div className="relative">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full overflow-hidden ring-4 ring-white shadow-xl">
                   <img
-                    src={testimonials[activeIndex].image}
+                    src={asset(testimonials[activeIndex].image)}
                     alt={testimonials[activeIndex].name}
                     className="w-full h-full object-cover"
                   />

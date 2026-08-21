@@ -3,6 +3,7 @@ import { Sparkles, MessageSquare, Brain, AlertTriangle } from "lucide-react";
 import Modal from "./Modal";
 import { useFormSubmit } from "./useFormSubmit";
 import { Ok } from "./Ok";
+import { asset } from "@/lib/asset";
 
 const Features: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -114,7 +115,7 @@ const Features: React.FC = () => {
           <div className="md:w-1/4 flex justify-center">
             <div className="w-24 h-24 rounded-full bg-ume-purple/10 flex items-center justify-center overflow-hidden">
               <img
-                src="/imgs/ceo.jpg"
+                src={asset("/imgs/ceo.jpg")}
                 alt="Founder"
                 className="w-full h-full object-cover"
               />
