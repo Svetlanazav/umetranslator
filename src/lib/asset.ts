@@ -2,9 +2,11 @@ const BASE = import.meta.env.BASE_URL;
 
 // Resolves a root-relative asset path against the deploy base path
 // ("/" locally at root, "/umetranslator/" on GitHub Pages).
-// Absolute URLs and data URIs are returned untouched.
+// Absolute URLs and data URIs are returned untouched, and paths that
+// already carry the base are left alone so double-resolving is harmless.
 export function asset(path: string): string {
   if (/^(https?:)?\/\//.test(path) || path.startsWith("data:")) return path;
+  if (BASE !== "/" && path.startsWith(BASE)) return path;
   return `${BASE}${path.replace(/^\//, "")}`;
 }
 
